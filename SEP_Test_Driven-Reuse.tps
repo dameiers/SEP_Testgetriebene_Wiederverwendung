@@ -4,14 +4,14 @@ Version=2
 
 [SessionInfo]
 ActiveTab=0
-FrameCount=6
-ActiveFrame=0
+FrameCount=5
+ActiveFrame=3
 
 [Frame0]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=160
 MinPos.y=520
 MaxPos.x=-9
@@ -24,25 +24,25 @@ Class=CLatexEdit
 Document=SEP_Test_Driven-Reuse.tex
 
 [Frame0_Row0]
-cyCur=527
+cyCur=300
 cyMin=10
 
 [Frame0_Col0]
-cxCur=1584
+cxCur=1551
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=6
-Cursor.column=39
+Cursor.row=15
+Cursor.column=1
 TopSubLine=0
 
 [Frame1]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=2
+Flags=0
+ShowCmd=1
 MinPos.x=0
-MinPos.y=520
+MinPos.y=555
 MaxPos.x=-9
 MaxPos.y=-36
 NormalPos.left=60
@@ -53,17 +53,17 @@ Class=CLatexEdit
 Document=wiederverwendung.tex
 
 [Frame1_Row0]
-cyCur=527
+cyCur=300
 cyMin=10
 
 [Frame1_Col0]
-cxCur=1584
+cxCur=1551
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=7
-Cursor.column=0
-TopSubLine=0
+Cursor.row=37
+Cursor.column=79
+TopSubLine=48
 
 [Frame2]
 Columns=1
@@ -97,66 +97,8 @@ TopSubLine=0
 [Frame3]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
-MinPos.x=-1
-MinPos.y=-1
-MaxPos.x=-9
-MaxPos.y=-36
-NormalPos.left=120
-NormalPos.top=120
-NormalPos.right=1718
-NormalPos.bottom=489
-Class=CLatexEdit
-Document=testgetrieben.tex
-
-[Frame3_Row0]
-cyCur=299
-cyMin=10
-
-[Frame3_Col0]
-cxCur=1555
-cxMin=10
-
-[Frame3_View0,0]
-Cursor.row=8
-Cursor.column=0
-TopSubLine=0
-
-[Frame4]
-Columns=1
-Rows=1
-Flags=0
-ShowCmd=1
-MinPos.x=-1
-MinPos.y=-1
-MaxPos.x=-9
-MaxPos.y=-36
-NormalPos.left=150
-NormalPos.top=150
-NormalPos.right=1748
-NormalPos.bottom=519
-Class=CLatexEdit
-Document=diskussion.tex
-
-[Frame4_Row0]
-cyCur=299
-cyMin=10
-
-[Frame4_Col0]
-cxCur=1555
-cxMin=10
-
-[Frame4_View0,0]
-Cursor.row=0
-Cursor.column=9
-TopSubLine=0
-
-[Frame5]
-Columns=1
-Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-9
@@ -168,16 +110,45 @@ NormalPos.bottom=369
 Class=CLatexEdit
 Document=suchmaschinen.tex
 
-[Frame5_Row0]
-cyCur=299
+[Frame3_Row0]
+cyCur=562
 cyMin=10
 
-[Frame5_Col0]
-cxCur=1555
+[Frame3_Col0]
+cxCur=606
 cxMin=10
 
-[Frame5_View0,0]
-Cursor.row=3
+[Frame3_View0,0]
+Cursor.row=24
 Cursor.column=0
-TopSubLine=0
+TopSubLine=35
+
+[Frame4]
+Columns=1
+Rows=1
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-9
+MaxPos.y=-36
+NormalPos.left=180
+NormalPos.top=180
+NormalPos.right=631
+NormalPos.bottom=587
+Class=CLatexEdit
+Document=libarchive.bib
+
+[Frame4_Row0]
+cyCur=337
+cyMin=10
+
+[Frame4_Col0]
+cxCur=408
+cxMin=10
+
+[Frame4_View0,0]
+Cursor.row=64
+Cursor.column=9
+TopSubLine=100
 
