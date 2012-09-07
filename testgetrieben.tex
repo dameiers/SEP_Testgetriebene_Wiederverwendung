@@ -2,11 +2,30 @@
 
 \section{Idee testgetriebene Wiederverwendung}
 
-Um Komponenten wiederzuverwerten, muss der Benutzer diese über Suchmaschinen suchen, wobei die gefundenen Komponenten manuell überprüft und getestet werden müssen, ehe diese in einem Projekt verwendet werden können. Die Suchmaschinen liefern allerdings viele Komponenten, die den Anforderungen nicht entsprechen, sogenannte "False Positives". \autocite[vgl.][]{OS5/2011} Diese False Positives kommen unter anderem zustande, da die Menge an Open-Source Code beachtlich ist und dieser Code durchaus wiederverwendet werden kann. Allerdings arbeiten die Suchmaschinen nicht gut genug um sämtliche falschen Ergebnisse herauszufiltern. Dies macht das manuelle heraus filtern sehr zeitaufwendig, so dass der Zeitgewinn bei der Wiederverwendung gering oder sogar negativ ausfällt und es schneller wäre die entsprechende Komponente neu zu schreiben. Diese Ungewissheit ob der Zeit gewonnen wird oder nicht, ist ein Argument gegen die Wiederverwendung, da durchaus viel Zeit verschwendet werden kann.
+Um Komponenten wiederzuverwerten, muss der Benutzer diese über Suchmaschinen suchen, wobei die gefundenen Komponenten manuell überprüft und getestet werden müssen, ehe diese in einem Projekt verwendet werden können. Die Suchmaschinen liefern allerdings viele Komponenten, die den Anforderungen nicht entsprechen, sogenannte "False Positives". \autocite[vgl.][10]{OS5/2011} Diese False Positives kommen unter anderem zustande, da die Menge an Open-Source Code beachtlich ist und dieser Code durchaus wiederverwendet werden kann. Allerdings arbeiten die Suchmaschinen nicht gut genug um sämtliche falschen Ergebnisse herauszufiltern. Dies macht das manuelle heraus filtern sehr zeitaufwendig, so dass der Zeitgewinn bei der Wiederverwendung gering oder sogar negativ ausfällt und es schneller wäre die entsprechende Komponente neu zu schreiben. Diese Ungewissheit ob der Zeit gewonnen wird oder nicht, ist ein Argument gegen die Wiederverwendung, da durchaus viel Zeit verschwendet werden kann.
 
 Hier kommt nun die testgetriebene Wiederverwendung ins Spiel. Diese versucht die Anzahl der False Positives zu verringern, indem die gefundenen Komponenten automatisch geprüft und getestet werden. Dem Benutzer  werden nur die vielversprechenden Komponenten angezeigt, also jene die den Test überstanden haben. Somit wird dem Benutzer Arbeit abgenommen und das Wiederverwenden, aus Sicht des Benutzers, ist nicht mehr so zeitaufwändig. Die Idee dass die Komponenten automatisch getestet werden, ist dank Unit-Tests und den agilen Entwicklungsmethoden nicht so abwegig. Im konkreten Fall bedeutet dies, dass der Benutzer einen Unit-Test für eine Komponente schreibt, die noch nicht entwickelt wurde. Dies ist eine Herangehensweise, die besonders bei agilen Entwicklungsmethoden häufig anzutreffen ist. Da der Test den Aufbau der gesuchten Komponente beschreibt, kann eine Suchmaschine diesen als Suchanfrage verwenden, um nach ähnlichen Komponenten zu suchen. Danach können die gefundenen Komponenten mit jenem Test getestet werden und der Benutzer erhält als Suchergebnis nur noch die Komponenten, die den Test erfolgreich bestanden haben. Die gefundenen Ergebnisse passen per Definition ins Projekt des Benutzers, da sie den von ihm erstellten Test bestanden haben. 
 
 
 \section{Vergleich und Stand von Tools}
+Die in \autocite[11]{OS5/2011} erwähnten Werkzeuge, die eine testgetriebene Wiederverwendung ermöglichen, sind:
+\begin{itemize}
+	\item Code Genie
+	\item S6
+	\item Code Conjurer
+\end{itemize}
+
+Diese 3 Werkzeuge werden im Folgenden, vorgestellt wobei auf Code Genie und S6 nur kurz eingegangen wird, und Code Conjurer ausführlicher betrachtet wird.
+
+\subsection{Code Genie}
+Die in \autocite[2]{Ota07} angegebene URL zu Code Genie existiert nicht mehr und es wurde auch sonst keine Möglichkeit gefunden um Code Genie herunterzuladen und zu testen. Laut \autocite[11]{OS5/2011} ist Code Genie ein Eclipse-Plug-In das die Suchmaschine Sourcerer benutzt. Allerdings verlangtes ein "manuelles Integrieren und/oder Testen der Kandidaten in einer Kopie des eigenen Eclipse-Projektes."
+
+\subsection{S6}
+S6 ist ein Web-Interface das über \autocite{s6search} erreichbar ist. Das Interface hat zwei große Nachteile:
+\begin{itemize}
+	\item Es können nur einfache Testfälle angegeben werden, die die Maske des Interfaces zulässt. Kompliziertere Unit-Tests sind somit nicht realisierbar, da das Hochladen von Dateien nicht möglich ist. 		Siehe in der Hilfe von: \autocite{s6search}
+	\item Weiterhin fehlt eine Anbindung an eine Entwicklungsumgebung, wie etwa Eclipse, so dass das Arbeiten mit S6 recht umständlich ist. \autocite[10]{s6search}
+\end{itemize}
+   
 
 
