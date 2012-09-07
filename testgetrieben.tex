@@ -1,10 +1,11 @@
 \chapter{Testgetriebene Wiederverwendung}
 
-Testgetriebene Wiederverwendung ist schön.
-
-\section{Anfänge}
-
 \section{Idee testgetriebene Wiederverwendung}
+
+Um Komponenten wiederzuverwerten, muss der Benutzer diese über Suchmaschinen suchen, wobei die gefundenen Komponenten manuell überprüft und getestet werden müssen, ehe diese in einem Projekt verwendet werden können. Die Suchmaschinen liefern allerdings viele Komponenten, die den Anforderungen nicht entsprechen, sogenannte "False Positives". \autocite[vgl.][]{OS5/2011} Diese False Positives kommen unter anderem zustande, da die Menge an Open-Source Code beachtlich ist und dieser Code durchaus wiederverwendet werden kann. Allerdings arbeiten die Suchmaschinen nicht gut genug um sämtliche falschen Ergebnisse herauszufiltern. Dies macht das manuelle heraus filtern sehr zeitaufwendig, so dass der Zeitgewinn bei der Wiederverwendung gering oder sogar negativ ausfällt und es schneller wäre die entsprechende Komponente neu zu schreiben. Diese Ungewissheit ob der Zeit gewonnen wird oder nicht, ist ein Argument gegen die Wiederverwendung, da durchaus viel Zeit verschwendet werden kann.
+
+Hier kommt nun die testgetriebene Wiederverwendung ins Spiel. Diese versucht die Anzahl der False Positives zu verringern, indem die gefundenen Komponenten automatisch geprüft und getestet werden. Dem Benutzer  werden nur die vielversprechenden Komponenten angezeigt, also jene die den Test überstanden haben. Somit wird dem Benutzer Arbeit abgenommen und das Wiederverwenden, aus Sicht des Benutzers, ist nicht mehr so zeitaufwändig. Die Idee dass die Komponenten automatisch getestet werden, ist dank Unit-Tests und den agilen Entwicklungsmethoden nicht so abwegig. Im konkreten Fall bedeutet dies, dass der Benutzer einen Unit-Test für eine Komponente schreibt, die noch nicht entwickelt wurde. Dies ist eine Herangehensweise, die besonders bei agilen Entwicklungsmethoden häufig anzutreffen ist. Da der Test den Aufbau der gesuchten Komponente beschreibt, kann eine Suchmaschine diesen als Suchanfrage verwenden, um nach ähnlichen Komponenten zu suchen. Danach können die gefundenen Komponenten mit jenem Test getestet werden und der Benutzer erhält als Suchergebnis nur noch die Komponenten, die den Test erfolgreich bestanden haben. Die gefundenen Ergebnisse passen per Definition ins Projekt des Benutzers, da sie den von ihm erstellten Test bestanden haben. 
+
 
 \section{Vergleich und Stand von Tools}
 
