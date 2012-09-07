@@ -5,7 +5,7 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=5
-ActiveFrame=3
+ActiveFrame=2
 
 [Frame0]
 Columns=1
@@ -32,9 +32,9 @@ cxCur=1551
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=15
-Cursor.column=1
-TopSubLine=0
+Cursor.row=25
+Cursor.column=0
+TopSubLine=10
 
 [Frame1]
 Columns=1
@@ -61,40 +61,11 @@ cxCur=1551
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=37
-Cursor.column=79
-TopSubLine=48
+Cursor.row=48
+Cursor.column=303
+TopSubLine=39
 
 [Frame2]
-Columns=1
-Rows=1
-Flags=0
-ShowCmd=1
-MinPos.x=-1
-MinPos.y=-1
-MaxPos.x=-9
-MaxPos.y=-36
-NormalPos.left=90
-NormalPos.top=90
-NormalPos.right=1684
-NormalPos.bottom=460
-Class=CLatexEdit
-Document=einleitung.tex
-
-[Frame2_Row0]
-cyCur=300
-cyMin=10
-
-[Frame2_Col0]
-cxCur=1551
-cxMin=10
-
-[Frame2_View0,0]
-Cursor.row=8
-Cursor.column=177
-TopSubLine=0
-
-[Frame3]
 Columns=1
 Rows=1
 Flags=2
@@ -110,20 +81,20 @@ NormalPos.bottom=369
 Class=CLatexEdit
 Document=suchmaschinen.tex
 
-[Frame3_Row0]
-cyCur=562
+[Frame2_Row0]
+cyCur=580
 cyMin=10
 
-[Frame3_Col0]
-cxCur=606
+[Frame2_Col0]
+cxCur=1584
 cxMin=10
 
-[Frame3_View0,0]
-Cursor.row=24
-Cursor.column=0
-TopSubLine=35
+[Frame2_View0,0]
+Cursor.row=16
+Cursor.column=67
+TopSubLine=19
 
-[Frame4]
+[Frame3]
 Columns=1
 Rows=1
 Flags=0
@@ -139,6 +110,35 @@ NormalPos.bottom=587
 Class=CLatexEdit
 Document=libarchive.bib
 
+[Frame3_Row0]
+cyCur=337
+cyMin=10
+
+[Frame3_Col0]
+cxCur=408
+cxMin=10
+
+[Frame3_View0,0]
+Cursor.row=84
+Cursor.column=9
+TopSubLine=119
+
+[Frame4]
+Columns=1
+Rows=1
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-9
+MaxPos.y=-36
+NormalPos.left=150
+NormalPos.top=150
+NormalPos.right=601
+NormalPos.bottom=557
+Class=CLatexEdit
+Document=header.tex
+
 [Frame4_Row0]
 cyCur=337
 cyMin=10
@@ -148,7 +148,7 @@ cxCur=408
 cxMin=10
 
 [Frame4_View0,0]
-Cursor.row=64
-Cursor.column=9
-TopSubLine=100
+Cursor.row=38
+Cursor.column=29
+TopSubLine=23
 

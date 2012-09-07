@@ -10,21 +10,67 @@ Die oftmals schlechte Qualität von Suchergebnissen liegt vor allem darin begründ
 
 Es ist leicht einzusehen, dass eine rein textbasierte Suche wie sie in Internetsuchmaschinen zum Einsatz kommt bei der Suche nach Software nur mäßige Ergebnisse liefert. 
 Dieses Phänomen wird in \autocite[]{OS5/2011} wie folgt beschrieben: 
-\enquote{So mag zwar der Suchbegriff ``Matrix'' durchaus Quelltexte liefern, die der Berechnung von Matrizen-Rechen-operationen dienen.Es ist allerdings beispielsweise bei Weitem nicht offensichtlich, welche Funktionalität im Einzelnen unterstützt wird, oder ob nicht unter Umständen nur der Begriff ``Matrix'' zufällig im Quellcode oder der Beschreibung eines Suchergebnisses auftaucht}
+\enquote{So mag zwar der Suchbegriff ``Matrix'' durchaus Quelltexte liefern, die der Berechnung von Matrizen-Rechen-operationen dienen.Es ist allerdings beispielsweise bei Weitem nicht offensichtlich, welche Funktionalität im Einzelnen unterstützt wird, oder ob nicht unter Umständen nur der Begriff ``Matrix'' zufällig im Quellcode oder der Beschreibung eines Suchergebnisses auftaucht.}
 
 Wie obiges Beispiel zeigt ist die Suche nach Software oder genauer gesagt das Formulieren einer guten Suchanfrage eine nicht triviale und komplexe Angelegneheit. Hinzukommt, dass eine zu genaue Suchanfrage das Suchergebnis zu stark einschränkt und somit unter Umständen evtl. passende oder vielversprechende Kandidaten nicht weiter berücksichtigt werden.
 
-Im Folgenden werden verschiedene Suchtechniken vorgestellt, die die Suchmöglichkeiten der Softwaresuche verbessern können.
+% - was möchte ich überhaupt suchen? codefragmente, ganze klassen, 
 
 \section{Suchtechniken}
+Im Folgenden werden verschiedene Suchtechniken vorgestellt, die die Suchmöglichkeiten der Softwaresuche verbessern können. Eine sehr ausführliche Diskussion der verschiedenen Suchtechniken findet sich in \autocite{Mil98}.
 
 \subsection{Textbasierte Suche}
 
+Die textbasierte Suche entspricht der allseits bekannten Such im Internet. Sie ist natürlich auch auf Software anwendbar, da  Software im allgemeinen aus einer Menge von Dokumenten, dem Quelltext, besteht. Die Suchanfrage besteht aus einem oder mehreren Begriffen die in den Quelltexten gesucht werden. 
+
+Wie bereits erwähnt hat diese Methode entscheidende Nachteile, was nicht zu letzt daran liegt, dass Software neben ``normalen'' Dokumenten (wie zb. Html) weitere Eigenschaften besitzt. Dazu gehören zb. Ausführbarkeit, prezise Semantik usw.
+
+
+Deshalb ist der Einsatz weiterführender Technologien erforderlich. 
+
+ 
 \subsection{Beschreibende Suchverfahren}
 
-\subsection{Strukturbasierte Suchverfahren}
+Beschreibende Suchverfahren sind den textbasierten Suchverfahren sehr ähnlich. Der einzige Unterschied besteht in der internen Repräsentation der Kandidaten. Ihnen wird eine (evtl. auch strukturierte) Liste von Metadaten zugeordnet. Die Metadaten bestehen dabei in der Regel aus einer Menge von Keywords.
+
+Laut \autocite{Mil98} ist die Einfachheit der zugrundeliegenden Idee der Hauptgrund warum beschreibende Suchverfahren sehr oft in Softwaresuchmaschinen genutzt werden.
+
+Ein Nachteil dieser Technik ist jedoch das die Metadaten nur schwer bis gar nicht automatisch zugeordnet werden können, was eine manuelle Erfassung der Metadaten erfordert. Diese manuelle Einteilung ist problematisch da sie vom Wissen und der Einschätzung der erfassenden Person abhängig ist. Diese muss jedoch nicht immer mit der Einteilung der Mehrheit überein stimmen, geschweige denn korrekt sein. Stimmen die Vorstellung der Metadaten der erfassenden Person und der suchenden Person nicht überein, wird die Suche nicht erfolgreich verlaufen. Dieses Problem sollte nicht unterschätzt werden. 
+
+Dass dieses Problem nicht zu unterschätzen ist, wird  anhand einer aktuellen Werbung eines Sportsenders für ein Fußballpaket deutlich und humorvoll aufgegriffen: \enquote{Woran denkst du bei, Schwalben, Spielzügen und Rudelbildung [...] und woran denkst du bei Ball?}.\autocite{sky} 
+
+Als mögliches Beispiel für beschreibende Suchverfahren nennt \autocite{OS5/2011} die \enquote{[...]in der Forschung momentan mit enormen Aufwand vorangetriebene Verwendung von Ontologien im Bereich der \textit{Semantic Web Services}, fällt beispielsweise in diese Kategorie.}  
 
 \subsection{Bedeutungsbasierte Suchverfahren}
 
-\section{Beispiele}
+Die bedeutungsbasierten Verfahren konzentrieren sich auf die Semantik der Software. Sie können unterschieden werden in operationale Verfahren und formale Verfahren.
 
+Die operationalen Verfahren machen sich die besondere Eigenschaft von Software zu nutze, dass sie ausführbar ist. Die Idee geht auf \autocite{Podgurski} zurück. Sie fanden heraus, dass eine Softwarekomponente sich eindeutig durch ihr Verhalten auf einer zufälligen Menge von Eingabedaten beschreiben lässt. Sie ordnen der ausführbaren Software eine Menge von typisierten Eingabevariablen sowie einer Wahrscheinlichkeitsverteilung des jeweiligen Eingabebereichs zu. Ein passender Kandidat wird gefunden indem anhand der Warscheinlichkeitsverteilung Eingabeparamter gewählt werden, und mit diesen die Software ausgeführt wird. Stimmt das Ergebniss mit dem gewünschten Resultat überein, ist ein guter Kandidat gefunden. Durch Wiederholung des Experimentes kann die Wahrscheinlichkeit das falsche Ergebnisse zurückgeliefert werden, enorm gesenkt werden. 
+
+Eine genauere Betrachtung der formalen Methoden würde den Rahmen dieser Ausarbeitung sprengen, zusammenfassend kann jedoch gesagt werden, dass \enquote{die operationalen Verfahren, die Wiederverwendungskandidaten kurzerhand mit beispielhaften Eingabedaten (Samples)ausführen, den auf formalen Beschreibungstechniken basierenden (und entsprechend komplizierten) Ansätzen zumindest bisher überlegen zu sein.}\autocite{OS5/2011} scheinen.
+
+\subsection{Strukturbasierte Suchverfahren}
+
+Strukturbasierte Methoden unterscheiden sich wesentlich von allen bisher vorgstellten Techniken. Sie abstrahieren von der funktionellen Eigenschaften, also dem was die Komponente leisten soll. Statt dessen untersuchen sie mögliche Kandidaten anhand ihrer Struktur. 
+
+Die zugrundeliegende Idee \enquote{[...]is the assumption that whenever two comonents have similiar functional properties, they also have similiar structures[...]}.\autocite{Mil98} [page 52]
+
+Dass eine solches Vorgehen notwendig sein kann wird in \autocite{Mil98} anhand von zwei Beispielen verdeutlicht. Man stelle sich 2 verschiedene Implementierungen eines Sortieralgorithmus vor. Eine Implementierung benutzt QuickSort, die andere SelectionSort als zugrundeliegenden Sortiealgorithmus. Auch wenn beide Programme die gleiche Funktionalität bereitstellen so ist deren Struktur doch deutlich unterschiedlich, da Quicksort ein rekursiver Algorithmus ist und grundlegend anders definiert. 
+
+Auch umgekehrt lässt sich ein Beispiel konstruieren. Man stelle sich ein Programm S sowie ein Programm M vor. S addiert die Elemente einer Liste, M multipliziert diese. Beide Programme haben eine unterschiedliche Funtkionalität, aufgrund ihrer ähnlichen Funktionsweise jedoch auch eine ähnliche Struktur. 
+Bei den bisher vorgestellten Techniken würde nach einer Suche nach S, P nicht als Kandidat geliefert werden, aufgrund ihrer ungleichen Funktionalität. Jedoch kann P mit wenigen Änderungen auf die gewünschte Funtkionalität gebracht werden und ist deshalb ein interessanter Kandidat.
+
+Die strukturbasierte Suche findet jedoch kaum Anwendung in der Praxis. Falls doch werden die besten Ergebnisse erzielt falls lediglich die Operationssignaturen verwendet werden. Die Verwendung der internen Code Struktur ist problematisch, da sich nur schwer genaue Suchanfragen formulieren lassen.  \autocite[vgl.][]{OS5/2011, Mil98}     
+
+
+\section{Beispiele}
+Die folgende Tabelle gibt eine Übersicht über aktuelle Softwaresuchmaschinen und gibt Aufschluss über die jeweils unterstützen Sprachen, sowie die verwendetet Suchtechniken und ist entommen aus \autocite{OS5/2011}.
+
+Besonderes Augenmerk ist auf die Merobase Suchmaschine zu legen, da sie mit dem später vorgestellten Tool CodeConjurer zusammenarbeitet.
+
+\begin{figure}
+	\centering
+		\includegraphics[width=1.0\textwidth]{./img/suchmaschinen.pdf}
+	\caption{Übersicht der wichtigsten Software-Suchmaschinen der letzten Jahre~\autocite{OS5/2011}}
+	\label{fig:suchmaschinen}
+\end{figure}
