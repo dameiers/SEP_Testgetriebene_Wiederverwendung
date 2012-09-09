@@ -5,13 +5,13 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=5
-ActiveFrame=2
+ActiveFrame=0
 
 [Frame0]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=160
 MinPos.y=520
 MaxPos.x=-9
@@ -24,16 +24,16 @@ Class=CLatexEdit
 Document=SEP_Test_Driven-Reuse.tex
 
 [Frame0_Row0]
-cyCur=300
+cyCur=562
 cyMin=10
 
 [Frame0_Col0]
-cxCur=1551
+cxCur=618
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=25
-Cursor.column=0
+Cursor.row=28
+Cursor.column=23
 TopSubLine=10
 
 [Frame1]
@@ -61,15 +61,15 @@ cxCur=1551
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=48
-Cursor.column=303
+Cursor.row=0
+Cursor.column=0
 TopSubLine=39
 
 [Frame2]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-9
@@ -82,17 +82,17 @@ Class=CLatexEdit
 Document=suchmaschinen.tex
 
 [Frame2_Row0]
-cyCur=580
+cyCur=299
 cyMin=10
 
 [Frame2_Col0]
-cxCur=1584
+cxCur=1555
 cxMin=10
 
 [Frame2_View0,0]
-Cursor.row=16
-Cursor.column=67
-TopSubLine=19
+Cursor.row=48
+Cursor.column=0
+TopSubLine=78
 
 [Frame3]
 Columns=1
@@ -119,9 +119,9 @@ cxCur=408
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=84
+Cursor.row=116
 Cursor.column=9
-TopSubLine=119
+TopSubLine=153
 
 [Frame4]
 Columns=1
@@ -148,7 +148,7 @@ cxCur=408
 cxMin=10
 
 [Frame4_View0,0]
-Cursor.row=38
-Cursor.column=29
-TopSubLine=23
+Cursor.row=0
+Cursor.column=0
+TopSubLine=0
 
