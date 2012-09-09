@@ -18,14 +18,64 @@ Die in \autocite[11]{OS5/2011} erwähnten Werkzeuge, die eine testgetriebene Wied
 Diese 3 Werkzeuge werden im Folgenden, vorgestellt wobei auf Code Genie und S6 nur kurz eingegangen wird, und Code Conjurer ausführlicher betrachtet wird.
 
 \subsection{Code Genie}
-Die in \autocite[2]{Ota07} angegebene URL zu Code Genie existiert nicht mehr und es wurde auch sonst keine Möglichkeit gefunden um Code Genie herunterzuladen und zu testen. Laut \autocite[11]{OS5/2011} ist Code Genie ein Eclipse-Plug-In das die Suchmaschine Sourcerer benutzt. Allerdings verlangtes ein "manuelles Integrieren und/oder Testen der Kandidaten in einer Kopie des eigenen Eclipse-Projektes."
+Die in \autocite[2]{Ota07} angegebene URL zu Code Genie existiert nicht mehr und es wurde auch sonst keine Möglichkeit gefunden um Code Genie herunterzuladen und zu testen. Laut \autocite[11]{OS5/2011} ist Code Genie ein Eclipse-Plug-In das die Suchmaschine Sourcerer benutzt. Allerdings verlangtes ein "'manuelles Integrieren und/oder Testen der Kandidaten in einer Kopie des eigenen Eclipse-Projektes."'
 
 \subsection{S6}
 S6 ist ein Web-Interface das über \autocite{s6search} erreichbar ist. Das Interface hat zwei große Nachteile:
 \begin{itemize}
-	\item Es können nur einfache Testfälle angegeben werden, die die Maske des Interfaces zulässt. Kompliziertere Unit-Tests sind somit nicht realisierbar, da das Hochladen von Dateien nicht möglich ist. 		Siehe in der Hilfe von: \autocite{s6search}
+	\item Es können nur einfache Testfälle angegeben werden, die die Maske des Interfaces zulässt. Kompliziertere Unit-Tests sind somit nicht realisierbar, da das Hochladen von Dateien nicht möglich ist. Siehe in der Hilfe von: \autocite{s6search}
 	\item Weiterhin fehlt eine Anbindung an eine Entwicklungsumgebung, wie etwa Eclipse, so dass das Arbeiten mit S6 recht umständlich ist. \autocite[10]{s6search}
 \end{itemize}
+
+\section{Code Conjurer}
+Code Conjurer ist ein Eclipse Plug-In das testgetrieben Wiederverwenudung für Java ermöglicht.
+Beim Ausprobieren von Code Conjurer ist uns aufgefallen, dass das Werkzeug das wir benutzten stark von dem Abweicht was im Artikel beschrieben wird. Dies liegt dadran dass im Artikel Code Conjurer 1 beschrieben wird. Allerdings wurde Code Conjurer zwischenzeitlich von Grund auf neu geschrieben \autocite{CC_SF}, so dass nur noch Code Conjurer 2 angeboten wird und die alte Version nicht mehr verfügbar ist. Das Problem ist allerdings, dass in der neuen Version noch einige Featureds fehlen. Im folgenden wird Code Conjurer 1 beschrieben und danach folgen unsere Erfahrungen mit Code Conjurer 2, sowie eine Auflistung mit den Fähigkeiten, die wir vermissen.
+
+\subsection{Beschreibung von Code Conjurer 1}
+
+Dieser Abschnitt beschreibt Code Conjurer 1, da diese Version des Werkzeuges, nicht mehr verfügbar war, wurde die Beschreibung aus \autocite[48-51]{Hum08}übernommen.
+
+\subsubsection{Prinzipielle Funktionsweise von Code Conjurer 1}
+
+\begin{itemize}
+	\item In einem ersten Schritt schreibt der Benutzer einen JUnit-Test für die ungeschriebene Komponente, die er benötigt.
+	\item In einem Status Feld, sieht der Benutzer eine Übersicht über die gefundenen Ergebnisse. In einem weiteren Fenster kann sich der Benutzer die Details zu der Suche explizit anzeigen lassen.
+	\item Code Conjurer wird automatisch activ wenn der Benutzer den Test ausführt.
+	\item Das Werkzeug sendet eine testgetrieben Suchanfrage an die Suchmaschine Merobase, welche die eigentlich Arbiet übernimmt.
+	\begin{itemize}
+ 		\item Merobase erstellt ein Interface aus dem Testfall und sucht nach Komponenten, die auf diese zutreffen.
+		\item Merobase teilt Code Conjurer die Anzahl der gefundenen Komponenten mit, welches es im Status Feld anzeigt.
+		\item Danach testet Merobase die Kandidaten mit Hilfe des Testfalls, in einer abgesicherten virtuellen Maschine, und filtert jene Kandidaten aus, die den Test nicht bestanden haben.
+	\end{itemize}
+	\item Code Conjurer zeigt die Anzahl der erfolgreich getesteten Kandidaten in dem Status Feld an.
+	\item In dem Fenster mit den Details zur Suche kann der Benutzer sich das Outline der gefundenen Komponenten anschauen, sowie den Quellcode überprüfen.
+	\item Hat sich der Benutzer für eine Komponenten entschieden, kann er diese zu seinem Projekt hinzufügen, wobei Code Conjurer die Abhängigkeiten automatisch auflöst.
+\end{itemize}
+
+\subsubsection{Weitere Funktionen von Code Conjurer 1}
+
+\paragraph{Automated Adaptation}
+
+In manchen Fällen werden nur wenige oder keine Komponenten gefunden, die mit dem Testfall übereinstimmen, aus diesem Grund bietet Code Conjurer die sogenannte Automated Adaptation. Dabei handelt es sich um Heuristiken, die z.B. Objekt- und Methodennamen ignoriert, so dass die Anzahl der gefundenen Komponenten erhöht wird. Außerdem, werden die Methoden so vertauscht, wenn dies möglich ist, dass mehr Testfälle durchlaufen werden können. Kurzum mit der Hilfe der Automated Adapation kann Code Conjurer Komponenten vorschlagen, die dem von Merobase erstellten Interface nicht entsprechen und trotzdem die benötigte Funktionalität liefern. Die Unterschiede zwischen der "'normalen"' Suche und Automated Adaptaion sind der Tabelle in der Abbildung~\ref{fig:normalVSautomated} zu entnehmen.
+
+Es fällt auf, dass teilweise deutlich mehr Kandidaten gefunden wurden und auch erfolgreich getestet werden konnten, allerdings hat sich die Ausführungszeit teilweise deutlich erhöht. Dies sieht man besonders beim Calculator Beispiel bei der die Dauer von 19 Sekunden auf 20 Stunden und 24 Minuten gestiegen ist. Trotzdem darf man diese Möglichkeit nicht außer acht lassen, da etwa bei Spreadsheet Beispiel mit der Automated Search 4 funktionierende Komponenten gefunden werden konnten, während die "'normale"' Suche zu keinem Ergebnis kam. 
+
+\begin{center}
+	\includegraphics[scale=0.5]{/home/me/git/SEP_Testgetriebene_Wiederverwendung/normalSearchVSAutomatedAdapation.png}
+	\caption{Vergleich der "'normalen"' Suche gengenüber von Automated Adapation}
+	\label{fig:normalVSautomated}
+\end{center}
+
+
+
+
+
+
+\subsubsection{Zusammenfassende Featureliste von Code Conjurer 1}
+
+\subsection{Erfahrungen mit Code Conjurer 2}
+
+\subsubsection{Fehlende Features in Code Conjurer 2}
    
 
 
