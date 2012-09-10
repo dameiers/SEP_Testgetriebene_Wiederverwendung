@@ -66,6 +66,29 @@ Es fällt auf, dass teilweise deutlich mehr Kandidaten gefunden wurden und auch e
 	\label{fig:normalVSautomated}
 \end{center}
 
+\paragraph{Proactive Reuse Recommendations}
+
+Code Conjurer kann den Entwickler proactive beim Designen seines Projektes unterstützen, in dem es ihm Vorschläge zu den noch unfertigen Klassen gibt. Damit der Benutzer nicht von seiner eigentlichen Arbeit, dem Designen von KLassen abgelenkot wird, schlägt Code Conjurer die Suche jedes mal automatisch an, sobald eine Methode zu der Klasse hinzugefügt, entfernt oder verändert wird. Die Vorschläge werden wie gewohnt angezeigt und können ins Projekt integriert werden.
+
+Auch wenn der Benutzer die vorgeschlagenen Komponenten nicht benutzt, so unterstützt ihn Code Conjurer trotzdem, da er sieht welcher Aufbau ähnliche Klassen häufig besitzen. Dies Vorgehensweise kann somit das Desgin des Projektes verbessern, da keine geläufigen Methoden vergessen werden.
+Als Beispiel, der Benutzer will eine Stack Klasse erstellen und schreibt eine Klasse mit folgendem Aufbau:
+\begin{verbatim}
+Stack{
+    void push(Object o){}
+    Object pop(){}	
+}
+\end{verbatim}
+Daraufhin schlägt Code Conjurer folgende Klasse vor, von der er die zusätzlichen Methoden übernehmen kann.
+\begin{verbatim}
+Stack{
+    boolean isEmpty(){}
+    Object pop(){}
+    void push(Object arg1){}
+    Object top(){}	
+}
+\end{verbatim}
+
+
 
 
 
