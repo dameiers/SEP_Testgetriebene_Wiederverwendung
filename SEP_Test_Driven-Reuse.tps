@@ -4,8 +4,8 @@ Version=2
 
 [SessionInfo]
 ActiveTab=0
-FrameCount=6
-ActiveFrame=5
+FrameCount=7
+ActiveFrame=1
 
 [Frame0]
 Columns=1
@@ -32,15 +32,15 @@ cxCur=1551
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=0
-Cursor.column=0
-TopSubLine=0
+Cursor.row=17
+Cursor.column=16
+TopSubLine=7
 
 [Frame1]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=0
 MinPos.y=555
 MaxPos.x=-9
@@ -53,17 +53,17 @@ Class=CLatexEdit
 Document=wiederverwendung.tex
 
 [Frame1_Row0]
-cyCur=300
+cyCur=562
 cyMin=10
 
 [Frame1_Col0]
-cxCur=1551
+cxCur=544
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=0
-Cursor.column=0
-TopSubLine=0
+Cursor.row=38
+Cursor.column=101
+TopSubLine=87
 
 [Frame2]
 Columns=1
@@ -119,9 +119,9 @@ cxCur=408
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=116
-Cursor.column=9
-TopSubLine=166
+Cursor.row=214
+Cursor.column=15
+TopSubLine=295
 
 [Frame4]
 Columns=1
@@ -155,8 +155,8 @@ TopSubLine=0
 [Frame5]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-9
@@ -169,15 +169,44 @@ Class=CLatexEdit
 Document=testgetrieben.tex
 
 [Frame5_Row0]
-cyCur=343
+cyCur=178
 cyMin=10
 
 [Frame5_Col0]
-cxCur=618
+cxCur=480
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=63
-Cursor.column=111
-TopSubLine=170
+Cursor.row=0
+Cursor.column=0
+TopSubLine=0
+
+[Frame6]
+Columns=1
+Rows=1
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-9
+MaxPos.y=-36
+NormalPos.left=180
+NormalPos.top=180
+NormalPos.right=560
+NormalPos.bottom=587
+Class=CLatexEdit
+Document=einleitung.tex
+
+[Frame6_Row0]
+cyCur=337
+cyMin=10
+
+[Frame6_Col0]
+cxCur=337
+cxMin=10
+
+[Frame6_View0,0]
+Cursor.row=5
+Cursor.column=83
+TopSubLine=5
 

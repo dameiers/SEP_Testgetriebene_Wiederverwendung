@@ -25,31 +25,69 @@ Da bisher der Begriff der Wiederverwendung bisher recht allgemein und abstrakt b
 \subsection{Begriffsdefinition}
 In der Literatur finden sich vielzählige und oft recht unterschiedliche Definitionen für den Begriff der Software-Wiederverwendung.
 
-So beschreibt [krueger] den Begriff sehr allgemein wie folgt: 
+So beschreibt \autocite{Kru92} den Begriff sehr allgemein wie folgt: 
 \begin{description}
 	\item[Software Reuse, \autocite{Kru92}] \enquote{ Software reuse is the process of creating software systems from existing software
 rather than building software systems from scratch.} 
 \end{description}
 
-Ähnlich beschreibt \autocite{diaz} den Begriff Software Reuse:
+Ähnlich, allerdings aus eher technischer Sicht, beschreibt \autocite{diaz} den Begriff Software Reuse als:
 \begin{description}
 	\item[Software Reuse, \autocite{diaz}] \enquote{ Software reuse is the use of existing software components to construct a new system.} 
 \end{description}
 
-Eine eher technische Definition findet sich in [] 
+Laut \autocite{gall} findet sich in \autocite{freeman} eine noch allgemeiner gefasste Definition des Begriffs. Hier wird die Wiederverwendung nicht rein auf die Wiederverwendung von Code und Codefragmenten reduziert:
 
-Wie obige Definitionen zeigen kann unter Wiederverwendung von Software weit mehr als die reine  Wiederverwendung von Code verstanden werden. Es kann zwischen folgenden Abstraktionsebenen unterschieden werden.
-  
-Die testgetriebene Wiederverwendung fokussiert die Wiederverwendung von Code-Fragmenten. Daher lehnen wir uns an die Definition von [] wenn im Folgenden der Begriff  Wiederverwendung von Software gebraucht wird.
+\begin{description}
+	\item[Reusable Software Engineering, \autocite{gall}] \enquote{Reusable Software Engineering beschäftigt sich mit der Entwicklung von Software unter Wiederverwendung aller während der Software-Entwicklung generiterten Informationen.} 
+\end{description}
 
 \subsection{Abstraktionsebenen}
+Wie obige Definitionen zeigen kann unter Wiederverwendung von Software weit mehr als die reine  Wiederverwendung von Code verstanden werden. Dies liegt vor allem daran, dass Wiederverwendung auf verschiedenen Asbtraktionsebenen durchgeführt werden kann, die wiederum neue Aspekte und Probleme mit sich bringen. Folgende Auflistung stellt eine Übersicht über die Verschiedenen Aspekte der Wiederverwendung und der möglichen Abstraktionsgrade dar und ist entnommen aus \autocite[vgl.][]{diaz}. Eine genaue Diskussion der einzelnen Punkte würde den Rahmen dieser Ausarbeitung sprengen,  sie gibnt jedoch eine guten Einblick in die Vielfältigkeit und Komplexität der Wiederverwendung von Software.
 
-\subsection{Aspekte der Wiederverwendung}
+\begin{itemize}
+	\item By substance
+		\begin{itemize}
+			\item ideas, concepts
+			\item artifacts, components
+			\item Procedures, Skills	
+		\end{itemize}
+	\item By scope
+		\begin{itemize}
+			\item Vertical
+			\item Horizontal
+		\end{itemize}
+	\item By mode
+		\begin{itemize}
+			\item planned, systematic
+			\item ad-hoc, opprtunistic
+		\end{itemize}
+			\item By technique
+		\begin{itemize}
+			\item compositional
+			\item Generative
+		\end{itemize}
+			\item By intention
+		\begin{itemize}
+			\item black-box, as-is
+			\item white-box, modified	
+		\end{itemize}
+			\item By product
+		\begin{itemize}
+			\item Source code
+			\item Design
+			\item Specifications
+			\item Objects
+			\item text
+			\item architectures
+		\end{itemize}
+\end{itemize}
    
+Die testgetriebene Wiederverwendung fokussiert die Wiederverwendung von Code-Fragmenten. Daher lehnen wir uns an die Definition von \autocite{diaz} und \autocite{Kru92} wenn im Folgenden der Begriff  Wiederverwendung von Software gebraucht wird.
    
 \section{Probleme}
 
-Die Wiederverwendung von Software ist seit beginn der Softwareentwicklung ein zentrales Thema. Der Begriff wurde erstmals von McIlroy 1968 geprägt. Er beschreibt in [] die damals katastrophale Lage der Softwareentwicklung und die Wiederverwendung als möglichen Ausweg aus der Softwarekrise.
+Die Wiederverwendung von Software ist seit beginn der Softwareentwicklung ein zentrales Thema. Der Begriff wurde erstmals von McIlroy 1968 geprägt. Er beschreibt in \autocite{mcilroy68mass} die damals katastrophale Lage der Softwareentwicklung und die Wiederverwendung als möglichen Ausweg aus der Softwarekrise.
  
 Seitdem erhoffte man sich mit neuen Paradigmen der Softwareentwicklung stets auch die Wiederverwendung von Softwarekomponenten zu erleichtern und zu verbessern. Objektorientierte Programmierung und service-orientierte Architekturen sind nur wenige von vielen Beispielen dafür \autocite[vgl.][]{OS5/2011}
 
