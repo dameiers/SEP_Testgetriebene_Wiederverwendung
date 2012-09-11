@@ -1,8 +1,8 @@
 \chapter{Wiederverwendung von Software}
 
-Bevor wir jedoch genauer auf die testgetriebene Wiederverwednung eingehen, möchten wir zunächst das Thema Wiederverwendung von Software allgemein betrachten. 
+Bevor wir jedoch genauer auf die testgetriebene Wiederverwendung eingehen, möchten wir zunächst das Thema Wiederverwendung von Software allgemein betrachten. 
 
-\section{Motivation}
+\section{Warum Wiederverwendung}
 
 Wie bereits eingangs erwähnt stehen Softwarefirmen vor einem immer stärkeren Konkurrenz-, Zeit- und Kostendruck. Die Anforderung bessere Software in kürzerer Zeit zu geringeren Kosten zu erstellen kann nur mithilfe verschiedenster Methoden u.a. der gezielten Wiederverwendung von Software realisiert werden.
 
@@ -14,16 +14,16 @@ Gerade die höhere Zuverlässigkeit und Qualität der Software, sowie die Einsparun
 
 Ein weiterer Vorteil ist, dass die Wartbarkeit von Software wesentlich erleichtert wird da evtl. auftretende Fehler in der wiederverwendeten Komponente nur einmal und nicht n-fach behoben werden müssen.
 
-Die Vorteile der Wiederverwendung von Software sind also eindeutig und nicht von der Hand zu weisen. 
+Die Vorteile der Wiederverwendung von Software sind also offensichtlich und bieten ein gute Möglichkeit die Softwareentwicklung produktiver, besser und billiger zu machen. 
 
 
 
 \section{Was bedeutet Wiederverwendung?}
 
-Da bisher der Begriff der Wiederverwendung bisher recht allgemein und abstrakt benutzt wurde, werden wir den Begriff zunächst definieren und die verschieden Ebenen der Wiederverwendung von Software erläutern.
+Da der Begriff der Wiederverwendung bisher recht allgemein und ohne genaue Definition benutzt wurde, werden wir den Begriff zunächst anhand einschlägiger Literatur definieren.
 
 \subsection{Begriffsdefinition}
-In der Literatur finden sich vielzählige und oft recht unterschiedliche Definitionen für den Begriff der Software-Wiederverwendung.
+In der Literatur finden sich vielzählige und recht unterschiedliche Definitionen für den Begriff der Software-Wiederverwendung.
 
 So beschreibt \autocite{Kru92} den Begriff sehr allgemein wie folgt: 
 \begin{description}
@@ -36,69 +36,40 @@ rather than building software systems from scratch.}
 	\item[Software Reuse, \autocite{diaz}] \enquote{ Software reuse is the use of existing software components to construct a new system.} 
 \end{description}
 
-Laut \autocite{gall} findet sich in \autocite{freeman} eine noch allgemeiner gefasste Definition des Begriffs. Hier wird die Wiederverwendung nicht rein auf die Wiederverwendung von Code und Codefragmenten reduziert:
+Laut \autocite{gall} findet sich in \autocite{freeman} eine noch umfassendere Definition des Begriffs. Hier wird die Wiederverwendung nicht rein auf die Wiederverwendung von Code und Codefragmenten reduziert:
 
 \begin{description}
-	\item[Reusable Software Engineering, \autocite{gall}] \enquote{Reusable Software Engineering beschäftigt sich mit der Entwicklung von Software unter Wiederverwendung aller während der Software-Entwicklung generiterten Informationen.} 
+	\item[Reusable Software Engineering, \autocite{gall}] \enquote{Reusable Software Engineering beschäftigt sich mit der Entwicklung von Software unter Wiederverwendung aller während der Software-Entwicklung generierten Informationen.} 
 \end{description}
 
+
 \subsection{Abstraktionsebenen}
-Wie obige Definitionen zeigen kann unter Wiederverwendung von Software weit mehr als die reine  Wiederverwendung von Code verstanden werden. Dies liegt vor allem daran, dass Wiederverwendung auf verschiedenen Asbtraktionsebenen durchgeführt werden kann, die wiederum neue Aspekte und Probleme mit sich bringen. Folgende Auflistung stellt eine Übersicht über die Verschiedenen Aspekte der Wiederverwendung und der möglichen Abstraktionsgrade dar und ist entnommen aus \autocite[vgl.][]{diaz}. Eine genaue Diskussion der einzelnen Punkte würde den Rahmen dieser Ausarbeitung sprengen,  sie gibnt jedoch eine guten Einblick in die Vielfältigkeit und Komplexität der Wiederverwendung von Software.
+Wie obige Definitionen zeigen kann unter Wiederverwendung von Software weit mehr als die reine  Wiederverwendung von Code verstanden werden. Dies liegt vor allem daran, dass Wiederverwendung auf verschiedenen Abstraktionsebenen durchgeführt werden kann, die wiederum neue Aspekte und Probleme mit sich bringen. Folgende Auflistung stellt eine Übersicht über die Verschiedenen Aspekte und Arten der Wiederverwendung von Software dar und ist angelehnt an \autocite[vgl.][]{diaz}. Eine genaue Diskussion der einzelnen Punkte würde den Rahmen dieser Ausarbeitung sprengen,  sie gibt jedoch eine guten Einblick in die Vielfältigkeit und Komplexität der Wiederverwendung von Software.
 
-\begin{itemize}
-	\item By substance
-		\begin{itemize}
-			\item ideas, concepts
-			\item artifacts, components
-			\item Procedures, Skills	
-		\end{itemize}
-	\item By scope
-		\begin{itemize}
-			\item Vertical
-			\item Horizontal
-		\end{itemize}
-	\item By mode
-		\begin{itemize}
-			\item planned, systematic
-			\item ad-hoc, opprtunistic
-		\end{itemize}
-			\item By technique
-		\begin{itemize}
-			\item compositional
-			\item Generative
-		\end{itemize}
-			\item By intention
-		\begin{itemize}
-			\item black-box, as-is
-			\item white-box, modified	
-		\end{itemize}
-			\item By product
-		\begin{itemize}
-			\item Source code
-			\item Design
-			\item Specifications
-			\item Objects
-			\item text
-			\item architectures
-		\end{itemize}
-\end{itemize}
+\begin{figure}[!htb]
+	\centering	\includegraphics[width=1.0\textwidth]{./img/tabelle_aspekte_wiederverwendung.png}
+	\caption{Übersicht über Aspekte von Wiederverwendung}
+	\label{fig:aspekte_reuse}
+\end{figure}
    
-Die testgetriebene Wiederverwendung fokussiert die Wiederverwendung von Code-Fragmenten. Daher lehnen wir uns an die Definition von \autocite{diaz} und \autocite{Kru92} wenn im Folgenden der Begriff  Wiederverwendung von Software gebraucht wird.
+Die testgetriebene Wiederverwendung fokussiert die Wiederverwendung von Code-Elementen. Daher lehnen wir uns an die Definition von \autocite{diaz} und \autocite{Kru92} an, wenn im Folgenden der Begriff  Wiederverwendung von Software gebraucht wird.
    
-\section{Probleme}
+\section{Probleme beim Wiederverwenden}
 
-Die Wiederverwendung von Software ist seit beginn der Softwareentwicklung ein zentrales Thema. Der Begriff wurde erstmals von McIlroy 1968 geprägt. Er beschreibt in \autocite{mcilroy68mass} die damals katastrophale Lage der Softwareentwicklung und die Wiederverwendung als möglichen Ausweg aus der Softwarekrise.
+Die Wiederverwendung von Software ist seit Beginn der Softwareentwicklung ein zentrales Thema. Der Begriff wurde erstmals von McIlroy 1968 geprägt. Er beschreibt in \autocite{mcilroy68mass} die damals katastrophale Lage der Softwareentwicklung und die Wiederverwendung als möglichen Ausweg aus der Softwarekrise.
  
 Seitdem erhoffte man sich mit neuen Paradigmen der Softwareentwicklung stets auch die Wiederverwendung von Softwarekomponenten zu erleichtern und zu verbessern. Objektorientierte Programmierung und service-orientierte Architekturen sind nur wenige von vielen Beispielen dafür \autocite[vgl.][]{OS5/2011}
 
-Und auch heutzutage gestaltet sich die Wiederverwendung von Software recht problematisch.[vgl] Doch warum lässt sich die recht einfache Idee der Wiederverwendung mit ihren vielen Vorteilen nur so schwer in die Praxis umsetzen? 
+Und auch heutzutage gestaltet sich die Wiederverwendung von Software recht problematisch und ist weit entfernt von einem praxistauglichen alltäglichem Einsatz. Doch warum lässt sich die recht einfache Idee der Wiederverwendung mit ihren vielen Vorteilen nur so schwer in die Praxis umsetzen? 
 
-Das hauptsächliche Problem lässt sich recht einfach und anschaulich formulieren. 
+Ein Grund dafür ist die rechtliche Sicht. Selbst wenn eine bereits existierende, funktional passende Softwarekomponente gefunden werden sollte, darf sie aufgrund lizentrechtlicher Vorgaben nicht immer verwendet werden. So erfordern manche Open Source Lizenzen, dass Produkte die mit Open Source Produkten entwickelt wurden bzw. diese enthalten, ebenfalls Open Source zur Verfügung gestellt werden müssen. Dies ist bei kommerziellen Produkten durchaus problematisch. Es müssen daher auch organisatorische Maßnahmen zur Wiederverwendung getroffen werden, denn bei der aktuellen Anzahl und Komplexität der Lizenzmodelle ist es nicht möglich, diese Entscheidung dem Entwickler zu überlassen, da eine Fehlentscheidung gravierende Folgen haben kann.
+
+Das hauptsächliche und gravierendere Problem jedoch lässt sich recht einfach und anschaulich formulieren. 
 
 \begin{center}
-Software wiederverwendet heißt Software wiederfinden.
+Software wiederverwenden heißt Software (wieder)finden.
 \end{center}
 
-Aufgrund der rasant gestiegenen Open Source entwicklung ist die Anzahl an möglichen Kandidaten enorm gestiegen. War zu den Anfängen der Wiederverwendung von Software das Problem dass es zu wenige mögliche Kandidaten gab, so hat sich dies durch die Open Source Entwicklung ins Gegenteil gewendet. Jedoch ist dieser Umstand genauso problematisch. Die enorme Größe von Software-Repos kann von einem Entwickler kaum noch Inhaltlich durchschaut werden kann. Allein das aktuelle JDK umfasst ca. 3800 Basisklassen. Zieht man weitere bekannte Frameworks in die Rechnung mit ein kommt allein im Java-Umfeld auf 10.000 Klassen. 
+Aufgrund der rasant gestiegenen Open Source Entwicklung ist die Anzahl an möglichen Wiederverwendungskandidaten enorm gestiegen. War zu den Anfängen der Wiederverwendung von Software das Problem dass es zu wenige mögliche Kandidaten gab, so hat sich dies durch die Open Source Entwicklung ins Gegenteil gewendet. Jedoch ist dieser Umstand genauso problematisch. Die enorme Größe von Software-Repositories kann von einem Entwickler kaum noch Inhaltlich überblickt werden. Allein das aktuelle JDK umfasst ca. 3800 Basisklassen. Zieht man weitere bekannte Frameworks in die Rechnung mit ein kommt allein im Java-Umfeld auf 10.000 Klassen.Selbst Firmen-intern gestaltet sich das Wiederfinden von Software Komponenten oft schwierig. Oftmals geht entsprechendes Wissen über die Existenz entsprechender Komponenten mit dem Ausscheiden von Mitarbeiten verloren, oder wird nach Beendigung des Projekt schlicht vergessen. \autocite[vgl.][]{OS5/2011}
 
-Selbst Firmen-intern gestaltet sich das Wiederfinden von Software Komponenten oft schwierig. Oftmals geht entsprechendes Wissen über die Existenz entsprechender Komponenten mit dem Ausscheiden von Mitarbeiten verloren, oder wird nach Beendigung des Projekt schlicht vergessen. 
+Auch wenn der Entwickler bei der Suche nach Software, wie im nächsten Kapitel beschrieben, durchaus mit technischen Mitteln und Werkzeugen unterstützt werden kann, bleibt die Suche nach möglichen Wiederverwendungskandidaten oft umständlich und aufwendig. Dies liegt in den allermeisten Fällen daran, dass die Suche oftmals nicht in die gewohnte Entwicklungsumgebung integriert, geschweige denn automatisiert ist. Laut \autocite{OS5/2011} erfordert dies zum \enquote{zeit- und konzentrationsraubenden Wechsel} zwischen Entwicklungsumgebung und Suchwerkzeug. Zum anderen wird in \autocite{OS5/2011} behauptet, dass \enquote{Entwickler sich häufig nicht bewusst sind, dass eine Suche nach wiederverwendbarem Material erfolgversprechend sein könnte}
