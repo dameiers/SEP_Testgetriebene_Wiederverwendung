@@ -4,14 +4,14 @@ Version=2
 
 [SessionInfo]
 ActiveTab=0
-FrameCount=5
-ActiveFrame=0
+FrameCount=6
+ActiveFrame=5
 
 [Frame0]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=160
 MinPos.y=520
 MaxPos.x=-9
@@ -24,17 +24,17 @@ Class=CLatexEdit
 Document=SEP_Test_Driven-Reuse.tex
 
 [Frame0_Row0]
-cyCur=562
+cyCur=300
 cyMin=10
 
 [Frame0_Col0]
-cxCur=618
+cxCur=1551
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=28
-Cursor.column=23
-TopSubLine=10
+Cursor.row=0
+Cursor.column=0
+TopSubLine=0
 
 [Frame1]
 Columns=1
@@ -63,7 +63,7 @@ cxMin=10
 [Frame1_View0,0]
 Cursor.row=0
 Cursor.column=0
-TopSubLine=39
+TopSubLine=0
 
 [Frame2]
 Columns=1
@@ -92,7 +92,7 @@ cxMin=10
 [Frame2_View0,0]
 Cursor.row=48
 Cursor.column=0
-TopSubLine=78
+TopSubLine=63
 
 [Frame3]
 Columns=1
@@ -121,7 +121,7 @@ cxMin=10
 [Frame3_View0,0]
 Cursor.row=116
 Cursor.column=9
-TopSubLine=153
+TopSubLine=166
 
 [Frame4]
 Columns=1
@@ -151,4 +151,33 @@ cxMin=10
 Cursor.row=0
 Cursor.column=0
 TopSubLine=0
+
+[Frame5]
+Columns=1
+Rows=1
+Flags=2
+ShowCmd=3
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-9
+MaxPos.y=-36
+NormalPos.left=0
+NormalPos.top=0
+NormalPos.right=523
+NormalPos.bottom=248
+Class=CLatexEdit
+Document=testgetrieben.tex
+
+[Frame5_Row0]
+cyCur=343
+cyMin=10
+
+[Frame5_Col0]
+cxCur=618
+cxMin=10
+
+[Frame5_View0,0]
+Cursor.row=63
+Cursor.column=111
+TopSubLine=170
 
