@@ -70,7 +70,7 @@ Es fällt auf, dass teilweise deutlich mehr Kandidaten gefunden wurden und auch e
 
 \paragraph{Proactive Reuse Recommendations}
 
-Code Conjurer kann den Entwickler proaktiv beim Designen seines Projektes unterstützen, in dem es ihm Vorschläge zu den noch unfertigen Klassen gibt. Damit der Benutzer nicht von seiner eigentlichen Arbeit, dem Designen von KLassen abgelenkt wird, schlägt Code Conjurer die Suche jedes mal automatisch an, sobald eine Methode zu der Klasse hinzugefügt, entfernt oder verändert wird. Die Vorschläge werden wie gewohnt angezeigt und können ins Projekt integriert werden.
+Code Conjurer kann den Entwickler proaktiv beim Designen seines Projektes unterstützen, in dem es ihm Vorschläge zu den noch unfertigen Klassen gibt. Damit der Benutzer nicht von seiner eigentlichen Arbeit, dem Designen von Klassen abgelenkt wird, schlägt Code Conjurer die Suche jedes mal automatisch an, sobald eine Methode zu der Klasse hinzugefügt, entfernt oder verändert wird. Die Vorschläge werden wie gewohnt angezeigt und können ins Projekt integriert werden.
 
 Auch wenn der Benutzer die vorgeschlagenen Komponenten nicht benutzt, so unterstützt ihn Code Conjurer trotzdem, da er sieht welcher Aufbau ähnliche Klassen häufig besitzen. Dies Vorgehensweise kann somit das Design des Projektes verbessern, da keine geläufigen Methoden vergessen werden.
 Als Beispiel, der Benutzer will eine Stack Klasse erstellen und schreibt eine Klasse mit folgendem Aufbau:
@@ -107,7 +107,13 @@ Aus den vorherigen Abschnitten kann eine Featureliste von Code Conjurer 1 erstel
 
 \subsection{Erfahrungen mit Code Conjurer 2}
 
-Um Code Conjurer 2 zu testen wurden verschiedene Beispiele aus Abbildung~\ref{fig:normalVSautomated} verwendet.
+Um Code Conjurer 2 zu testen wurden verschiedene Beispiele aus Abbildung~\ref{fig:normalVSautomated} verwendet. Die Durchführung war hier jedesmal die gleiche:
+\begin{itemize}
+	\item Klasse mit Methoden aus der Abbildung erstellen, wobei die Methoden leer bleiben
+	\item Codebasierte Suche durchführen
+	\item Testfall zu der Klasse schreiben
+	\item Testbasierte Suche durchführen
+\end{itemize}
 
 \subsubsection{Shopping Card}
 
@@ -116,12 +122,32 @@ Ein weiteres Testen mit diesem Beispiel ist demnach sinnlos.
 
 \subsubsection{Complex Number}
 
-Bei der Suche nach Komponenten für komplexe Zahlen wurden zumindest Suchergebnisse gefunden, die auf den ersten Blick vielversprechend aussahen. Diese Ergebnisse sollten mit Hilfe der testgetriebene Suche gefiltert werden. Allerdings konnte keine der Komponente den Test bestehen. Dies kann einerseits daran liegen, dass die Suche auf 30 Komponenten beschränkt ist. Diese Beschränkung ist von Merobase so vorgegeben, um die Server nicht zu sehr zu belasten. Andererseits kann es auch auf den Code zurückzuführen sein, den Merobase zur Verfügung steht. Stichprobenweise stellte sich heraus, dass die Methoden nicht implementiert waren, Methoden fehlten oder dass die Komponenten nichts mit komplexen Zahlen gemein hatten.
+Bei der Suche nach Komponenten für komplexe Zahlen wurden zumindest Suchergebnisse gefunden, die auf den ersten Blick vielversprechend aussahen. Diese Ergebnisse sollten mit Hilfe der testgetriebenen Suche gefiltert werden. Allerdings konnte keine der Komponente den Test bestehen. Dies kann einerseits daran liegen, dass die Suche auf 30 Komponenten beschränkt ist. Diese Beschränkung ist von Merobase so vorgegeben, um die Server nicht zu sehr zu belasten. Andererseits kann es auch auf den Code zurückzuführen sein, den Merobase zur Verfügung steht. Stichprobenweise stellte sich heraus, dass die Methoden nicht implementiert waren, Methoden fehlten oder dass die Komponenten nichts mit komplexen Zahlen gemein hatten.
 
+\subsubsection{Matrix}
 
- 
+Als letztes Beispiel wurde nach einer Matrix Komponente gesucht. Bei der normalen Codesuche wurden 30 Ergebnisse gefunden, demnach konnte mit der testgetriebenen Suche weitergemacht werden. Bei dieser Suche, konnten allerdings keine passenden Treffer gefunden werden. Gibt man den Testfall direkt bei Merobase an, so schlagen hier auch alle Testfälle fehl, wobei bei jedem Testfall die Fehlermeldung "'TestResult: error: compilation failed"' ausgegeben wird. Um sicher zu gehen, dass diese Fehlermeldung nicht auf den JUnit-Testfall zurückzuführen ist, wurde die Matrix Klasse von uns implementiert und der Testfall konnte lokal erfolgreich durchgeführt werden. Demnach ist unserer Testfall richtig und die eigentliche Suche bei Merobase schlägt fehl. 
 
-\subsubsection{Fehlende Features in Code Conjurer 2}
-   
+\subsubsection{Fazit zu Code Conjurer 2}
 
+Um Code Conjurer 2 zu bewerten, werden zu erst die einzelnen Features betrachtet, ehe ein Fazit über das gesamte Werkzeug abgegeben wird.
+
+\begin{description}
+	\item [Suche nach Klassen mit Hilfe des Klassenaufbaus]
+		{Dieses Feature ist vorhanden und funktioniert, soweit Merobase brauchbare Resultate liefert.}
+	\item [Testgetriebene Suche]
+		{Dieses Feature ist ebenfalls vorhanden, es kann allerdings nicht behauptet werden, dass es funktioniert, weil die Resultate, die von Merobase zürckgegeben werden, nicht brauchbar sind.}
+	\item [Anzeigen einer Übersicht zu den Suchergebnisse in einem Status Feld]
+		{Dieses Feature ist nicht vorhanden.}
+	\item [Anzeigen der Suchergebnisse mit Quellcode]
+		{Ist vorhanden.}
+	\item [Hinzufügen einer Komponente per Drag-And-Drop zum eigenen Projekt]
+		{}
+	\item [Automatisches Auflösen der Abhängigkeiten von einem hinzugefügten Projekt]
+		{}
+	\item [Automated Adaptation]
+		{}
+	\item [Proactive Reuse Recommendations]
+		{}
+\end{description}
 
