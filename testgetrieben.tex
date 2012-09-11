@@ -1,6 +1,6 @@
 \chapter{Testgetriebene Wiederverwendung}
 
-\section{Idee testgetriebene Wiederverwendung}
+\section{Idee der testgetriebenen Wiederverwendung}
 
 Um Komponenten wiederzuverwerten, muss der Benutzer diese über Suchmaschinen suchen, wobei die gefundenen Komponenten manuell überprüft und getestet werden müssen, ehe diese in einem Projekt verwendet werden können. Die Suchmaschinen liefern allerdings viele Komponenten, die den Anforderungen nicht entsprechen, sogenannte "False Positives". \autocite[vgl.][10]{OS5/2011} Diese False Positives kommen unter anderem zustande, da die Menge an Open-Source Code beachtlich ist und dieser Code durchaus wiederverwendet werden kann. Allerdings arbeiten die Suchmaschinen nicht gut genug um sämtliche falschen Ergebnisse herauszufiltern. Dies macht das manuelle heraus filtern sehr zeitaufwendig, so dass der Zeitgewinn bei der Wiederverwendung gering oder sogar negativ ausfällt und es schneller wäre die entsprechende Komponente neu zu schreiben. Diese Ungewissheit ob der Zeit gewonnen wird oder nicht, ist ein Argument gegen die Wiederverwendung, da durchaus viel Zeit verschwendet werden kann.
 
@@ -28,20 +28,20 @@ S6 ist ein Web-Interface das über \autocite{s6search} erreichbar ist. Das Interf
 \end{itemize}
 
 \section{Code Conjurer}
-Code Conjurer ist ein Eclipse Plug-In das testgetrieben Wiederverwenudung für Java ermöglicht.
-Beim Ausprobieren von Code Conjurer ist uns aufgefallen, dass das Werkzeug das wir benutzten stark von dem Abweicht was im Artikel beschrieben wird. Dies liegt dadran dass im Artikel Code Conjurer 1 beschrieben wird. Allerdings wurde Code Conjurer zwischenzeitlich von Grund auf neu geschrieben \autocite{CC_SF}, so dass nur noch Code Conjurer 2 angeboten wird und die alte Version nicht mehr verfügbar ist. Das Problem ist allerdings, dass in der neuen Version noch einige Featureds fehlen. Im folgenden wird Code Conjurer 1 beschrieben und danach folgen unsere Erfahrungen mit Code Conjurer 2, sowie eine Auflistung mit den Fähigkeiten, die wir vermissen.
+Code Conjurer ist ein Eclipse Plug-In das testgetriebene Wiederverwendung für Java ermöglicht.
+Beim Ausprobieren von Code Conjurer ist uns aufgefallen, dass das Werkzeug das wir benutzten stark von dem Abweicht was im Artikel beschrieben wird. Dies liegt daran dass im Artikel Code Conjurer 1 beschrieben wird. Allerdings wurde Code Conjurer zwischenzeitlich von Grund auf neu geschrieben \autocite{CC_SF}, so dass nur noch Code Conjurer 2 angeboten wird und die alte Version nicht mehr verfügbar ist. Das Problem ist allerdings, dass in der neuen Version noch einige Features fehlen. Im folgenden wird Code Conjurer 1 beschrieben und danach folgen unsere Erfahrungen mit Code Conjurer 2, sowie eine Auflistung mit den Fähigkeiten, die wir vermissen.
 
 \subsection{Beschreibung von Code Conjurer 1}
 
-Dieser Abschnitt beschreibt Code Conjurer 1, da diese Version des Werkzeuges, nicht mehr verfügbar war, wurde die Beschreibung aus \autocite[48-51]{Hum08}übernommen.
+Dieser Abschnitt beschreibt Code Conjurer 1, da diese Version des Werkzeugs, nicht mehr verfügbar war, wurde die Beschreibung aus \autocite[48-51]{Hum08}übernommen.
 
 \subsubsection{Prinzipielle Funktionsweise von Code Conjurer 1}
 
 \begin{itemize}
 	\item In einem ersten Schritt schreibt der Benutzer einen JUnit-Test für die ungeschriebene Komponente, die er benötigt.
 	\item In einem Status Feld, sieht der Benutzer eine Übersicht über die gefundenen Ergebnisse. In einem weiteren Fenster kann sich der Benutzer die Details zu der Suche explizit anzeigen lassen.
-	\item Code Conjurer wird automatisch activ wenn der Benutzer den Test ausführt.
-	\item Das Werkzeug sendet eine testgetrieben Suchanfrage an die Suchmaschine Merobase, welche die eigentlich Arbiet übernimmt.
+	\item Code Conjurer wird automatisch aktiv wenn der Benutzer den Test ausführt.
+	\item Das Werkzeug sendet eine testgetriebene Suchanfrage an die Suchmaschine Merobase, welche die eigentlich Arbeit übernimmt.
 	\begin{itemize}
  		\item Merobase erstellt ein Interface aus dem Testfall und sucht nach Komponenten, die auf diese zutreffen.
 		\item Merobase teilt Code Conjurer die Anzahl der gefundenen Komponenten mit, welches es im Status Feld anzeigt.
@@ -58,21 +58,21 @@ Weitere Funktionen von Code Conjurer 1 sind die Automated Adaptation und Proacti
 
 \paragraph{Automated Adaptation}
 
-In manchen Fällen werden nur wenige oder keine Komponenten gefunden, die mit dem Testfall übereinstimmen, aus diesem Grund bietet Code Conjurer die sogenannte Automated Adaptation. Dabei handelt es sich um Heuristiken, die z.B. Objekt- und Methodennamen ignoriert, so dass die Anzahl der gefundenen Komponenten erhöht wird. Außerdem, werden die Methoden so vertauscht, wenn dies möglich ist, dass mehr Testfälle durchlaufen werden können. Kurzum mit der Hilfe der Automated Adapation kann Code Conjurer Komponenten vorschlagen, die dem von Merobase erstellten Interface nicht entsprechen und trotzdem die benötigte Funktionalität liefern. Die Unterschiede zwischen der "'normalen"' Suche und Automated Adaptaion sind der Tabelle in der Abbildung~\ref{fig:normalVSautomated} zu entnehmen.
+In manchen Fällen werden nur wenige oder keine Komponenten gefunden, die mit dem Testfall übereinstimmen, aus diesem Grund bietet Code Conjurer die sogenannte Automated Adaptation. Dabei handelt es sich um Heuristiken, die z.B. Objekt- und Methodennamen ignoriert, so dass die Anzahl der gefundenen Komponenten erhöht wird. Außerdem, werden die Methoden so vertauscht, wenn dies möglich ist, dass mehr Testfälle durchlaufen werden können. Kurzum mit der Hilfe der Automated Adapation kann Code Conjurer Komponenten vorschlagen, die dem von Merobase erstellten Interface nicht entsprechen und trotzdem die benötigte Funktionalität liefern. Die Unterschiede zwischen der "'normalen"' Suche und Automated Adaptation sind der Tabelle in der Abbildung~\ref{fig:normalVSautomated} zu entnehmen.
 
 Es fällt auf, dass teilweise deutlich mehr Kandidaten gefunden wurden und auch erfolgreich getestet werden konnten, allerdings hat sich die Ausführungszeit teilweise deutlich erhöht. Dies sieht man besonders beim Calculator Beispiel bei der die Dauer von 19 Sekunden auf 20 Stunden und 24 Minuten gestiegen ist. Trotzdem darf man diese Möglichkeit nicht außer acht lassen, da etwa bei Spreadsheet Beispiel mit der Automated Search 4 funktionierende Komponenten gefunden werden konnten, während die "'normale"' Suche zu keinem Ergebnis kam. 
 
 \begin{center}
-	\includegraphics[scale=0.5]{/home/me/git/SEP_Testgetriebene_Wiederverwendung/normalSearchVSAutomatedAdapation.png}
-	\caption{Vergleich der "'normalen"' Suche gengenüber von Automated Adapation}
+	\includegraphics[scale=0.5]{./img/normalSearchVSAutomatedAdapation.png}
+	\caption{Vergleich der "'normalen"' Suche gegenüber von Automated Adapation}
 	\label{fig:normalVSautomated}
 \end{center}
 
 \paragraph{Proactive Reuse Recommendations}
 
-Code Conjurer kann den Entwickler proactive beim Designen seines Projektes unterstützen, in dem es ihm Vorschläge zu den noch unfertigen Klassen gibt. Damit der Benutzer nicht von seiner eigentlichen Arbeit, dem Designen von KLassen abgelenkot wird, schlägt Code Conjurer die Suche jedes mal automatisch an, sobald eine Methode zu der Klasse hinzugefügt, entfernt oder verändert wird. Die Vorschläge werden wie gewohnt angezeigt und können ins Projekt integriert werden.
+Code Conjurer kann den Entwickler proaktiv beim Designen seines Projektes unterstützen, in dem es ihm Vorschläge zu den noch unfertigen Klassen gibt. Damit der Benutzer nicht von seiner eigentlichen Arbeit, dem Designen von KLassen abgelenkt wird, schlägt Code Conjurer die Suche jedes mal automatisch an, sobald eine Methode zu der Klasse hinzugefügt, entfernt oder verändert wird. Die Vorschläge werden wie gewohnt angezeigt und können ins Projekt integriert werden.
 
-Auch wenn der Benutzer die vorgeschlagenen Komponenten nicht benutzt, so unterstützt ihn Code Conjurer trotzdem, da er sieht welcher Aufbau ähnliche Klassen häufig besitzen. Dies Vorgehensweise kann somit das Desgin des Projektes verbessern, da keine geläufigen Methoden vergessen werden.
+Auch wenn der Benutzer die vorgeschlagenen Komponenten nicht benutzt, so unterstützt ihn Code Conjurer trotzdem, da er sieht welcher Aufbau ähnliche Klassen häufig besitzen. Dies Vorgehensweise kann somit das Design des Projektes verbessern, da keine geläufigen Methoden vergessen werden.
 Als Beispiel, der Benutzer will eine Stack Klasse erstellen und schreibt eine Klasse mit folgendem Aufbau:
 \begin{verbatim}
 Stack{
@@ -97,8 +97,8 @@ Aus den vorherigen Abschnitten kann eine Featureliste von Code Conjurer 1 erstel
 \begin{itemize}
 	\item Suche nach Klassen mit Hilfe des Klassenaufbaus
 	\item Testgetriebene Suche
-	\item Anzeigen einer Übersicht zu den Suchergebnissen in einem Status Feld
-	\item Anzeigen der Suchergebnissenmit Quellcode
+	\item Anzeigen einer Übersicht zu den Suchergebnisse in einem Status Feld
+	\item Anzeigen der Suchergebnisse mit Quellcode
 	\item Hinzufügen einer Komponente per Drag-And-Drop zum eigenen Projekt
 	\item Automatisches Auflösen der Abhängigkeiten von einem hinzugefügten Projekt
 	\item Automated Adaptation
@@ -106,6 +106,20 @@ Aus den vorherigen Abschnitten kann eine Featureliste von Code Conjurer 1 erstel
 \end{itemize}
 
 \subsection{Erfahrungen mit Code Conjurer 2}
+
+Um Code Conjurer 2 zu testen wurden verschiedene Beispiele aus Abbildung~\ref{fig:normalVSautomated} verwendet.
+
+\subsubsection{Shopping Card}
+
+Bei diesem Beispiel soll eine Komponente für einen Einkaufswagen gefunden werden, dazu wurde eine Java Klasse angelegt, die den gleichen Aufbau hat, wie dies oben in der Abbildung gezeigt wird. In einem ersten Schritt soll Code Conjurer die normale Codesuche verwenden, diese findet allerdings keine Ergebnisse. Gibt man die Klasse bei Merobase direkt ein, so erhält man zwar Suchergebnisse, allerdings kann Merobase den Quellcode dieser Komponenten nicht mehr finden.
+Ein weiteres Testen mit diesem Beispiel ist demnach sinnlos.
+
+\subsubsection{Complex Number}
+
+Bei der Suche nach Komponenten für komplexe Zahlen wurden zumindest Suchergebnisse gefunden, die auf den ersten Blick vielversprechend aussahen. Diese Ergebnisse sollten mit Hilfe der testgetriebene Suche gefiltert werden. Allerdings konnte keine der Komponente den Test bestehen. Dies kann einerseits daran liegen, dass die Suche auf 30 Komponenten beschränkt ist. Diese Beschränkung ist von Merobase so vorgegeben, um die Server nicht zu sehr zu belasten. Andererseits kann es auch auf den Code zurückzuführen sein, den Merobase zur Verfügung steht. Stichprobenweise stellte sich heraus, dass die Methoden nicht implementiert waren, Methoden fehlten oder dass die Komponenten nichts mit komplexen Zahlen gemein hatten.
+
+
+ 
 
 \subsubsection{Fehlende Features in Code Conjurer 2}
    
