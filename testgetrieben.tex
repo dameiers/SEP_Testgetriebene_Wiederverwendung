@@ -1,9 +1,14 @@
 \chapter{Testgetriebene Wiederverwendung}
 
 \section{Idee der testgetriebenen Wiederverwendung}
+%insgesamt finde ich das Kapitel hier zu kurz
+%anbei ein paar ideen wie man das noch erweitern könnte
+
+%ich würde noch genauer auf die Probleme eingehen, also suche oftmals nicht automatisiert, nicht integriert usw..
 
 Um Komponenten wiederzuverwerten, muss der Benutzer diese über Suchmaschinen suchen, wobei die gefundenen Komponenten manuell überprüft und getestet werden müssen, ehe diese in einem Projekt verwendet werden können. Die Suchmaschinen liefern allerdings viele Komponenten, die den Anforderungen nicht entsprechen, sogenannte "False Positives". \autocite[vgl.][10]{OS5/2011} Diese False Positives kommen unter anderem zustande, da die Menge an Open-Source Code beachtlich ist und dieser Code durchaus wiederverwendet werden kann. Allerdings arbeiten die Suchmaschinen nicht gut genug um sämtliche falschen Ergebnisse herauszufiltern. Dies macht das manuelle heraus filtern sehr zeitaufwendig, so dass der Zeitgewinn bei der Wiederverwendung gering oder sogar negativ ausfällt und es schneller wäre die entsprechende Komponente neu zu schreiben. Diese Ungewissheit ob der Zeit gewonnen wird oder nicht, ist ein Argument gegen die Wiederverwendung, da durchaus viel Zeit verschwendet werden kann.
 
+%hier genauer erläutern dass in agile methoden test first gilt und warum (quelle buch kent beck...)
 Hier kommt nun die testgetriebene Wiederverwendung ins Spiel. Diese versucht die Anzahl der False Positives zu verringern, indem die gefundenen Komponenten automatisch geprüft und getestet werden. Dem Benutzer  werden nur die vielversprechenden Komponenten angezeigt, also jene die den Test überstanden haben. Somit wird dem Benutzer Arbeit abgenommen und das Wiederverwenden, aus Sicht des Benutzers, ist nicht mehr so zeitaufwändig. Die Idee dass die Komponenten automatisch getestet werden, ist dank Unit-Tests und den agilen Entwicklungsmethoden nicht so abwegig. Im konkreten Fall bedeutet dies, dass der Benutzer einen Unit-Test für eine Komponente schreibt, die noch nicht entwickelt wurde. Dies ist eine Herangehensweise, die besonders bei agilen Entwicklungsmethoden häufig anzutreffen ist. Da der Test den Aufbau der gesuchten Komponente beschreibt, kann eine Suchmaschine diesen als Suchanfrage verwenden, um nach ähnlichen Komponenten zu suchen. Danach können die gefundenen Komponenten mit jenem Test getestet werden und der Benutzer erhält als Suchergebnis nur noch die Komponenten, die den Test erfolgreich bestanden haben. Die gefundenen Ergebnisse passen per Definition ins Projekt des Benutzers, da sie den von ihm erstellten Test bestanden haben. 
 
 
@@ -15,6 +20,7 @@ Die in \autocite[11]{OS5/2011} erwähnten Werkzeuge, die eine testgetriebene Wied
 	\item Code Conjurer
 \end{itemize}
 
+%grund warum fokus auf code conjurer...
 Diese 3 Werkzeuge werden im Folgenden, vorgestellt wobei auf Code Genie und S6 nur kurz eingegangen wird, und Code Conjurer ausführlicher betrachtet wird.
 
 \subsection{Code Genie}
@@ -29,6 +35,7 @@ S6 ist ein Web-Interface das über \autocite{s6search} erreichbar ist. Das Interf
 
 \section{Code Conjurer}
 Code Conjurer ist ein Eclipse Plug-In das testgetriebene Wiederverwendung für Java ermöglicht.
+%welchem artikel
 Beim Ausprobieren von Code Conjurer ist uns aufgefallen, dass das Werkzeug das wir benutzten stark von dem Abweicht was im Artikel beschrieben wird. Dies liegt daran dass im Artikel Code Conjurer 1 beschrieben wird. Allerdings wurde Code Conjurer zwischenzeitlich von Grund auf neu geschrieben \autocite{CC_SF}, so dass nur noch Code Conjurer 2 angeboten wird und die alte Version nicht mehr verfügbar ist. Das Problem ist allerdings, dass in der neuen Version noch einige Features fehlen. Im folgenden wird Code Conjurer 1 beschrieben und danach folgen unsere Erfahrungen mit Code Conjurer 2, sowie eine Auflistung mit den Fähigkeiten, die wir vermissen.
 
 \subsection{Beschreibung von Code Conjurer 1}
@@ -36,7 +43,7 @@ Beim Ausprobieren von Code Conjurer ist uns aufgefallen, dass das Werkzeug das w
 Dieser Abschnitt beschreibt Code Conjurer 1, da diese Version des Werkzeugs, nicht mehr verfügbar war, wurde die Beschreibung aus \autocite[48-51]{Hum08}übernommen.
 
 \subsubsection{Prinzipielle Funktionsweise von Code Conjurer 1}
-
+%hier fände ich vlt einen beschrifteten screenshot ganz hilfreich...
 \begin{itemize}
 	\item In einem ersten Schritt schreibt der Benutzer einen JUnit-Test für die ungeschriebene Komponente, die er benötigt.
 	\item In einem Status Feld, sieht der Benutzer eine Übersicht über die gefundenen Ergebnisse. In einem weiteren Fenster kann sich der Benutzer die Details zu der Suche explizit anzeigen lassen.

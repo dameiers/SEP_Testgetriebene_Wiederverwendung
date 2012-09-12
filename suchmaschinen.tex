@@ -4,7 +4,7 @@ Die für Menschen nicht mehr zu handelnde Größe von Softwarerepositories führt zu
 
 Dies ist jedoch nicht als Nachteil zu sehen, da durch die maschinelle Unterstützung es für den Entwickler wesentlich leichter wird nach Komponenten beliebiger Funktionalität zu suchen. 
 
-Daher verwundert es nicht, dass die Idee einer maschinellen Suche nach Software nicht neu ist, sondern bereits seit über 25 Jahren exisitert. [vgl Quelle] Doch lange Zeit wurden keine nennenswerten Fortschritte in der Entwicklung von Suchmaschinen gemacht, da aufgrund der geringen verfügbaren Menge an Software die bis dato entwicklten Systeme vollkommen ausreichend waren. Erst mit der Open Source Bewegung wurde deutlich, dass weiterer Forschungsbedarf besteht. Die immer größere Menge an Software zeigte, dass bisherige Suchmaschinen zu schlechte Ergebnisse lieferten und für die Suche viel zu lange brauchten. [Quelle]. Auch heute noch besteht Forschungsbedarf um die Suchergebnisse qualitativ besser zu machen. 
+Daher verwundert es nicht, dass die Idee einer maschinellen Suche nach Software nicht neu ist, sondern bereits seit über 25 Jahren exisitert. \autocite[vgl.][]{OS5/2011} Doch lange Zeit wurden keine nennenswerten Fortschritte in der Entwicklung von Suchmaschinen gemacht, da aufgrund der geringen verfügbaren Menge an Software die bis dato entwicklten Systeme vollkommen ausreichend waren. Erst mit der Open Source Bewegung wurde deutlich, dass weiterer Forschungsbedarf besteht. Die immer größere Menge an Software zeigte, dass bisherige Suchmaschinen zu schlechte Ergebnisse lieferten und für die Suche viel zu lange brauchten. \autocite[vgl.][]{OS5/2011}. Auch heute noch besteht Forschungsbedarf um die Suchergebnisse qualitativ besser zu machen. 
 
 Die oftmals schlechte Qualität von Suchergebnissen liegt vor allem darin begründet, dass sich die Suche nach Software wesentlich von anderen Suchproblemen wie zb. der Internetsuche unterscheidet.
 
@@ -35,19 +35,19 @@ Beschreibende Suchverfahren sind den textbasierten Suchverfahren sehr ähnlich. D
 
 Laut \autocite{Mil98} ist die Einfachheit der zugrundeliegenden Idee der Hauptgrund warum beschreibende Suchverfahren sehr oft in Softwaresuchmaschinen genutzt werden.
 
-Ein Nachteil dieser Technik ist jedoch das die Metadaten nur schwer bis gar nicht automatisch zugeordnet werden können, was eine manuelle Erfassung der Metadaten erfordert. Diese manuelle Einteilung ist problematisch da sie vom Wissen und der Einschätzung der erfassenden Person abhängig ist. Diese muss jedoch nicht immer mit der Einteilung der Mehrheit überein stimmen, geschweige denn korrekt sein. Stimmen die Vorstellung der Metadaten der erfassenden Person und der suchenden Person nicht überein, wird die Suche nicht erfolgreich verlaufen. Dieses Problem sollte nicht unterschätzt werden. 
+Ein Nachteil dieser Technik ist jedoch das die Metadaten nur schwer bis gar nicht automatisch zugeordnet werden können, was eine manuelle Erfassung der Metadaten erfordert. Diese manuelle Einteilung ist problematisch da sie vom Wissen und der Einschätzung der erfassenden Person abhängig ist. Diese muss jedoch nicht immer mit der Einteilung der Mehrheit überein stimmen, geschweige denn korrekt sein. Stimmen die Vorstellung der Metadaten der erfassenden Person und der suchenden Person nicht überein, wird die Suche nicht erfolgreich verlaufen.
 
 Dass dieses Problem nicht zu unterschätzen ist, wird  anhand einer aktuellen Werbung eines Sportsenders für ein Fußballpaket deutlich und humorvoll aufgegriffen: \enquote{Woran denkst du bei, Schwalben, Spielzügen und Rudelbildung [...] und woran denkst du bei Ball?}.\autocite{sky} 
 
-Als mögliches Beispiel für beschreibende Suchverfahren nennt \autocite{OS5/2011} die \enquote{[...]in der Forschung momentan mit enormen Aufwand vorangetriebene Verwendung von Ontologien im Bereich der \textit{Semantic Web Services}, fällt beispielsweise in diese Kategorie.}  
+Als mögliches Beispiel für beschreibende Suchverfahren nennt \autocite{OS5/2011}: \enquote{[...]die in der Forschung momentan mit enormen Aufwand vorangetriebene Verwendung von Ontologien im Bereich der \textit{Semantic Web Services}, fällt beispielsweise in diese Kategorie.}  
 
 \subsection{Bedeutungsbasierte Suchverfahren}
 
 Die bedeutungsbasierten Verfahren konzentrieren sich auf die Semantik der Software. Sie können unterschieden werden in operationale Verfahren und formale Verfahren.
 
-Die operationalen Verfahren machen sich die besondere Eigenschaft von Software zu nutze, dass sie ausführbar ist. Die Idee geht auf \autocite{Podgurski} zurück. Sie fanden heraus, dass eine Softwarekomponente sich eindeutig durch ihr Verhalten auf einer zufälligen Menge von Eingabedaten beschreiben lässt. Sie ordnen der ausführbaren Software eine Menge von typisierten Eingabevariablen sowie einer Wahrscheinlichkeitsverteilung des jeweiligen Eingabebereichs zu. Ein passender Kandidat wird gefunden indem anhand der Warscheinlichkeitsverteilung Eingabeparamter gewählt werden, und mit diesen die Software ausgeführt wird. Stimmt das Ergebniss mit dem gewünschten Resultat überein, ist ein guter Kandidat gefunden. Durch Wiederholung des Experimentes kann die Wahrscheinlichkeit das falsche Ergebnisse zurückgeliefert werden, enorm gesenkt werden. 
+Die operationalen Verfahren machen sich die besondere Eigenschaft von Software zu nutze, dass sie ausführbar ist. Die Idee geht auf \autocite{Podgurski} zurück. Dort wird beschrieben, dass eine Softwarekomponente sich eindeutig durch ihr Verhalten auf einer zufälligen Menge von Eingabedaten beschreiben lässt. Der ausführbaren Software wird eine Menge von typisierten Eingabevariablen sowie einer Wahrscheinlichkeitsverteilung des jeweiligen Eingabebereichs zugeordnet. Ein passender Kandidat wird gefunden indem anhand der Warscheinlichkeitsverteilung Eingabeparamter gewählt werden, und mit diesen die Software ausgeführt wird. Stimmt das Ergebniss mit dem gewünschten Resultat überein, ist ein guter Kandidat gefunden. Durch Wiederholung des Experimentes kann die Wahrscheinlichkeit das falsche Ergebnisse zurückgeliefert werden, enorm gesenkt werden. 
 
-Eine genauere Betrachtung der formalen Methoden würde den Rahmen dieser Ausarbeitung sprengen, zusammenfassend kann jedoch gesagt werden, dass \enquote{die operationalen Verfahren, die Wiederverwendungskandidaten kurzerhand mit beispielhaften Eingabedaten (Samples)ausführen, den auf formalen Beschreibungstechniken basierenden (und entsprechend komplizierten) Ansätzen zumindest bisher überlegen zu sein.}\autocite{OS5/2011} scheinen.
+Eine genauere Betrachtung der formalen Methoden würde den Rahmen dieser Ausarbeitung sprengen. Bei diesem Verfahren wird versucht die Semantik mit formalen Methoden zu beschreiben. Zusammenfassend kann jedoch gesagt werden, dass \enquote{die operationalen Verfahren, die Wiederverwendungskandidaten kurzerhand mit beispielhaften Eingabedaten (Samples)ausführen, den auf formalen Beschreibungstechniken basierenden (und entsprechend komplizierten) Ansätzen zumindest bisher überlegen zu sein.}\autocite{OS5/2011} scheinen.
 
 \subsection{Strukturbasierte Suchverfahren}
 
@@ -55,7 +55,7 @@ Strukturbasierte Methoden unterscheiden sich wesentlich von allen bisher vorgste
 
 Die zugrundeliegende Idee \enquote{[...]is the assumption that whenever two comonents have similiar functional properties, they also have similiar structures[...]}.\autocite{Mil98} [page 52]
 
-Dass eine solches Vorgehen notwendig sein kann wird in \autocite{Mil98} anhand von zwei Beispielen verdeutlicht. Man stelle sich 2 verschiedene Implementierungen eines Sortieralgorithmus vor. Eine Implementierung benutzt QuickSort, die andere SelectionSort als zugrundeliegenden Sortiealgorithmus. Auch wenn beide Programme die gleiche Funktionalität bereitstellen so ist deren Struktur doch deutlich unterschiedlich, da Quicksort ein rekursiver Algorithmus ist und grundlegend anders definiert. 
+Dass eine solches Vorgehen notwendig sein kann wird in \autocite{Mil98} anhand von zwei Beispielen verdeutlicht. Man stelle sich 2 verschiedene Implementierungen eines Sortieralgorithmus vor. Eine Implementierung benutzt QuickSort, die andere SelectionSort als zugrundeliegenden Sortieralgorithmus. Auch wenn beide Programme die gleiche Funktionalität bereitstellen so ist deren Struktur doch deutlich unterschiedlich, da Quicksort ein rekursiver Algorithmus ist und grundlegend anders aufgebaut ist. 
 
 Auch umgekehrt lässt sich ein Beispiel konstruieren. Man stelle sich ein Programm S sowie ein Programm M vor. S addiert die Elemente einer Liste, M multipliziert diese. Beide Programme haben eine unterschiedliche Funtkionalität, aufgrund ihrer ähnlichen Funktionsweise jedoch auch eine ähnliche Struktur. 
 Bei den bisher vorgestellten Techniken würde nach einer Suche nach S, P nicht als Kandidat geliefert werden, aufgrund ihrer ungleichen Funktionalität. Jedoch kann P mit wenigen Änderungen auf die gewünschte Funtkionalität gebracht werden und ist deshalb ein interessanter Kandidat.
@@ -64,7 +64,7 @@ Die strukturbasierte Suche findet jedoch kaum Anwendung in der Praxis. Falls doc
 
 
 \section{Beispiele}
-Die folgende Tabelle gibt eine Übersicht über aktuelle Softwaresuchmaschinen und gibt Aufschluss über die jeweils unterstützen Sprachen, sowie die verwendetet Suchtechniken und ist entommen aus \autocite{OS5/2011}.
+Die folgende Tabelle gibt eine Übersicht über aktuelle Softwaresuchmaschinen und gibt Aufschluss über die jeweils unterstützen Sprachen, sowie die verwendeten Suchtechniken und ist entnommen aus \autocite{OS5/2011}.
 
 Besonderes Augenmerk ist auf die Merobase Suchmaschine zu legen, da sie mit dem später vorgestellten Tool CodeConjurer zusammenarbeitet.
 
