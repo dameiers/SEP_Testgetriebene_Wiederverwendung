@@ -20,11 +20,10 @@ Die in \autocite[11]{OS5/2011} erwähnten Werkzeuge, die eine testgetriebene Wied
 	\item Code Conjurer
 \end{itemize}
 
-%grund warum fokus auf code conjurer...
-Diese 3 Werkzeuge werden im Folgenden, vorgestellt wobei auf Code Genie und S6 nur kurz eingegangen wird, und Code Conjurer ausführlicher betrachtet wird.
+Diese 3 Werkzeuge werden im Folgenden, vorgestellt wobei auf Code Genie und S6 nur kurz eingegangen wird. Code Conjurer wird ausführlicher betrachtet, weil es unserer Meinung das am ausgereiftesten Werkzeug ist, das testgetriebene Wiederverwendung erlaubt.
 
 \subsection{Code Genie}
-Die in \autocite[2]{Ota07} angegebene URL zu Code Genie existiert nicht mehr und es wurde auch sonst keine Möglichkeit gefunden um Code Genie herunterzuladen und zu testen. Laut \autocite[11]{OS5/2011} ist Code Genie ein Eclipse-Plug-In das die Suchmaschine Sourcerer benutzt. Allerdings verlangtes ein "'manuelles Integrieren und/oder Testen der Kandidaten in einer Kopie des eigenen Eclipse-Projektes."'
+Die in \autocite[2]{Ota07} angegebene URL zu Code Genie existiert nicht mehr und es wurde auch sonst keine Möglichkeit gefunden um Code Genie herunterzuladen und zu testen. Laut \autocite[11]{OS5/2011} ist Code Genie ein Eclipse-Plug-In das die Suchmaschine Sourcerer benutzt. Allerdings verlangt es ein "'manuelles Integrieren und/oder Testen der Kandidaten in einer Kopie des eigenen Eclipse-Projektes."'
 
 \subsection{S6}
 S6 ist ein Web-Interface das über \autocite{s6search} erreichbar ist. Das Interface hat zwei große Nachteile:
@@ -35,23 +34,30 @@ S6 ist ein Web-Interface das über \autocite{s6search} erreichbar ist. Das Interf
 
 \section{Code Conjurer}
 Code Conjurer ist ein Eclipse Plug-In das testgetriebene Wiederverwendung für Java ermöglicht.
-%welchem artikel
-Beim Ausprobieren von Code Conjurer ist uns aufgefallen, dass das Werkzeug das wir benutzten stark von dem Abweicht was im Artikel beschrieben wird. Dies liegt daran dass im Artikel Code Conjurer 1 beschrieben wird. Allerdings wurde Code Conjurer zwischenzeitlich von Grund auf neu geschrieben \autocite{CC_SF}, so dass nur noch Code Conjurer 2 angeboten wird und die alte Version nicht mehr verfügbar ist. Das Problem ist allerdings, dass in der neuen Version noch einige Features fehlen. Im folgenden wird Code Conjurer 1 beschrieben und danach folgen unsere Erfahrungen mit Code Conjurer 2, sowie eine Auflistung mit den Fähigkeiten, die wir vermissen.
+Beim Ausprobieren von Code Conjurer ist uns aufgefallen, dass das Werkzeug das wir benutzten stark von dem Abweicht was im Artikel \autocite{OS5/2011} beschrieben wird. Dies liegt daran dass im Artikel Code Conjurer 1 beschrieben wird. Allerdings wurde Code Conjurer zwischenzeitlich von Grund auf neu geschrieben \autocite{CC_SF}, so dass nur noch Code Conjurer 2 angeboten wird und die alte Version nicht mehr verfügbar ist. Das Problem ist allerdings, dass in der neuen Version noch einige Features fehlen. Im folgenden wird Code Conjurer 1 beschrieben und danach folgen unsere Erfahrungen mit Code Conjurer 2, sowie eine Auflistung mit den Fähigkeiten, die wir vermissen.
 
 \subsection{Beschreibung von Code Conjurer 1}
+
+\begin{figure}[t]
+	\includegraphics[width=\textwidth]{./img/screenshotCodeConjurer.png}
+	\caption{Screenshot von Code Conjurer}
+	\label{fig:screenCC}
+\end{figure}
 
 Dieser Abschnitt beschreibt Code Conjurer 1, da diese Version des Werkzeugs, nicht mehr verfügbar war, wurde die Beschreibung aus \autocite[48-51]{Hum08}übernommen.
 
 \subsubsection{Prinzipielle Funktionsweise von Code Conjurer 1}
-%hier fände ich vlt einen beschrifteten screenshot ganz hilfreich...
+
+Es folgt ein allgemeiner Ablauf, wie Code Conjurer benutzt werden kann. Wie die einzelnen Funktionen aussehen, kann der Abbildung~\ref{fig:screenCC} entnommen werden.
+Die wichtigsten Fenster von Code Conjurer 1 sind, das Status Feld und das Detailfenster. Im Statusfeld, sieht der Benutzer eine Übersicht über die gefundenen Ergebnisse, dieses befindet sich unten links. Im Detailfenster kann sich der Benutzer die Details zu der Suche explizit anzeigen lassen. Dieses ist in zwei aufgeteilt, wobei in der Mitte unten die Suchergebnisse zu sehen sind, und rechts davon wird der Quellcode der einzelnen Suchergebnisse angezeigt. 
+
 \begin{itemize}
-	\item In einem ersten Schritt schreibt der Benutzer einen JUnit-Test für die ungeschriebene Komponente, die er benötigt.
-	\item In einem Status Feld, sieht der Benutzer eine Übersicht über die gefundenen Ergebnisse. In einem weiteren Fenster kann sich der Benutzer die Details zu der Suche explizit anzeigen lassen.
+	\item In einem ersten Schritt schreibt der Benutzer einen JUnit-Test für die ungeschriebene Komponente, die er benötigt. Dieser Vorgang geschieht ganz normal, wie der Benutzer dies gewöhnt ist, allerdings muss er darauf achten dass JUnit3 verwendet wird, da Code Conjurer nur dieses ünterstützt.
 	\item Code Conjurer wird automatisch aktiv wenn der Benutzer den Test ausführt.
 	\item Das Werkzeug sendet eine testgetriebene Suchanfrage an die Suchmaschine Merobase, welche die eigentlich Arbeit übernimmt.
 	\begin{itemize}
  		\item Merobase erstellt ein Interface aus dem Testfall und sucht nach Komponenten, die auf diese zutreffen.
-		\item Merobase teilt Code Conjurer die Anzahl der gefundenen Komponenten mit, welches es im Status Feld anzeigt.
+		\item Merobase teilt Code Conjurer die Anzahl der gefundenen Komponenten mit, welche dann im Status Feld anzeigt wird.
 		\item Danach testet Merobase die Kandidaten mit Hilfe des Testfalls, in einer abgesicherten virtuellen Maschine, und filtert jene Kandidaten aus, die den Test nicht bestanden haben.
 	\end{itemize}
 	\item Code Conjurer zeigt die Anzahl der erfolgreich getesteten Kandidaten in dem Status Feld an.
@@ -70,7 +76,7 @@ In manchen Fällen werden nur wenige oder keine Komponenten gefunden, die mit dem
 Es fällt auf, dass teilweise deutlich mehr Kandidaten gefunden wurden und auch erfolgreich getestet werden konnten, allerdings hat sich die Ausführungszeit teilweise deutlich erhöht. Dies sieht man besonders beim Calculator Beispiel bei der die Dauer von 19 Sekunden auf 20 Stunden und 24 Minuten gestiegen ist. Trotzdem darf man diese Möglichkeit nicht außer acht lassen, da etwa bei Spreadsheet Beispiel mit der Automated Search 4 funktionierende Komponenten gefunden werden konnten, während die "'normale"' Suche zu keinem Ergebnis kam. 
 
 \begin{center}
-	\includegraphics[scale=0.5]{./img/normalSearchVSAutomatedAdapation.png}
+	\includegraphics[width=\textwidth]{./img/normalSearchVSAutomatedAdapation.png}
 	\caption{Vergleich der "'normalen"' Suche gegenüber von Automated Adapation}
 	\label{fig:normalVSautomated}
 \end{center}
