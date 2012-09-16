@@ -105,7 +105,7 @@ Stack{
 
 \subsubsection{Zusammenfassende Featureliste von Code Conjurer 1}
 
-Aus den vorherigen Abschnitten kann eine Featureliste von Code Conjurer 1 erstellt werden, die dann später verwendet werden kann, um aufzuzeigen, welche Features bei Code Conjurer 2 fehlen.
+Aus den vorherigen Abschnitten kann eine Featureliste von Code Conjurer 1 erstellt werden, die dann später verwendet werden kann, um aufzuzeigen, welche Features bei Code Conjurer 2 fehlen, oder nicht so funktionieren wie beschrieben.
 
 \begin{itemize}
 	\item Suche nach Klassen mit Hilfe des Klassenaufbaus
@@ -139,7 +139,12 @@ Bei der Suche nach Komponenten für komplexe Zahlen wurden zumindest Suchergebnis
 
 \subsubsection{Matrix}
 
-Als letztes Beispiel wurde nach einer Matrix Komponente gesucht. Bei der normalen Codesuche wurden 30 Ergebnisse gefunden, demnach konnte mit der testgetriebenen Suche weitergemacht werden. Bei dieser Suche, konnten allerdings keine passenden Treffer gefunden werden. Gibt man den Testfall direkt bei Merobase an, so schlagen hier auch alle Testfälle fehl, wobei bei jedem Testfall die Fehlermeldung "'TestResult: error: compilation failed"' ausgegeben wird. Um sicher zu gehen, dass diese Fehlermeldung nicht auf den JUnit-Testfall zurückzuführen ist, wurde die Matrix Klasse von uns implementiert und der Testfall konnte lokal erfolgreich durchgeführt werden. Demnach ist unserer Testfall richtig und die eigentliche Suche bei Merobase schlägt fehl. 
+In diesem letztes Beispiel wurde nach einer Matrix Komponente gesucht. Bei der normalen Codesuche wurden 30 Ergebnisse gefunden, demnach konnte mit der testgetriebenen Suche weitergemacht werden. Bei dieser Suche, konnten allerdings keine passenden Treffer gefunden werden. Gibt man den Testfall direkt bei Merobase an, so schlagen hier auch alle Testfälle fehl, wobei bei jedem Testfall die Fehlermeldung "'TestResult: error: compilation failed"' ausgegeben wird. Um sicher zu gehen, dass diese Fehlermeldung nicht auf den JUnit-Testfall zurückzuführen ist, wurde die Matrix Klasse von uns implementiert und der Testfall konnte lokal erfolgreich durchgeführt werden. Demnach ist unserer Testfall richtig und die eigentliche Suche bei Merobase schlägt fehl.
+
+\subsubsection{getter/setter}
+Im letzten Beispiel, bestand die Testklasse nur aus einem setter und einem getter für eine String Variable. Es wurden 30 Ergebnisse gefunden, die getestet wurden. Dabei waren 8 erfolgreich, nach dem ein Adapter geschrieben erstellt wurde, da die Variabelnamen und Methodennamen nicht übereinstimmten. Der Rest schlug fehl. Die Ergebnisse wurden stichprobenartig kontrolliert, dabei fiel auf, dass einige Komponenten den Test hätten bestehen müssen. Weiterhin fiel auf, dass die Komponenten die bestanden, keine Abhängigkeiten haben, jene die hätten bestehen müssen jedoch welche haben.
+Bei der direkten Suche mit Merobase wurde unsere Vermutung bestätigt. Jene Komponenten, die hätten bestehen müssen, zeigten die Fehlermeldung "'TestResult: error: compilation failed"'. Somit gehen wir davon aus, dass Merobase die Abhängigkeiten nicht richtig oder gar nicht auflöst.
+
 
 \subsubsection{Fazit zu Code Conjurer 2}
 
@@ -153,16 +158,16 @@ Um Code Conjurer 2 zu bewerten, werden zu erst die einzelnen Features betrachtet
 	\item [Anzeigen einer Übersicht zu den Suchergebnisse in einem Status Feld]
 		{Dieses Feature ist nicht vorhanden.}
 	\item [Anzeigen der Suchergebnisse mit Quellcode]
-		{Ist vorhanden.}
+		{Funktioniert wie beschrieben.}
 	\item [Hinzufügen einer Komponente per Drag-And-Drop zum eigenen Projekt]
-		{}
+		{Das Hinzufügen einer einzelnen Komponente zu einem eigenen Projekt funktioniert.}
 	\item [Automatisches Auflösen der Abhängigkeiten von einem hinzugefügten Projekt]
-		{}
+		{Dieses Feature funktioniert nicht. Dies scheint jedoch ein Problem von Merobase selbst zu sein, wie im Beispiel oben beschrieben.}
 	\item [Automated Adaptation]
-		{}
+		{Funktioniert wie beschrieben.}
 	\item [Proactive Reuse Recommendations]
-		{}
+		{Dieses Feature ist vorhanden. Allerdings wird die automatische Suche sehr häufig angestoßen, so dass es zuviele Ressourcen benötigt und Eclipse,für einige Minuten, blockieren läßt. Dies passiert besonders häufig, wenn eine eigene Komponente mit einer, von Code Conjurer gefundenen, Komponente überschrieben wird. Kurz: durch das Blockieren kostet das Feature mehr Zeit und Nerven, als das kurze Drücken auf den Suchknopf und ist somit kontraproduktiv.}
 \end{description}
 
-Unterm Strich kann man festhalten, dass die codebasierte Suche funktioniert und der gefundene Code, in einigen Fällen, zu gebrauchen ist. Das Werkzeug ist allerdings hierfür nicht ausgelegt, so dass die entsprechenden Hilfsmittel fehlen. Mit der eigentlichen Hauptfunktionalität, der testgetriebenen Suche, konnten keine brauchbaren Ergebnisse erziehlt werden, so dass kein gefundener Code wiederverwendet werden konnte. 
+Unterm Strich kann man festhalten, dass die codebasierte Suche funktioniert und der gefundene Code, in einigen Fällen, zu gebrauchen ist. Das Werkzeug ist allerdings hierfür nicht ausgelegt, so dass es umständlich ist, das Werkzeug für diese Aufgabe zu verwenden. Mit der eigentlichen Hauptfunktionalität, der testgetriebenen Suche, konnten keine brauchbaren Ergebnisse erziehlt werden, so dass kein gefundener Code wiederverwendet werden konnte. 
 
