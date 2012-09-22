@@ -1,12 +1,12 @@
 \chapter{Recommendation Tools}
 %ich bin nicht wirklich zufrieden mit der Position und der Text ist nicht wirklich besonders, kA warum die das eigentlich im Artikel drin haben. Nutzt nicht wirklich was.
-Ehe auf die Testgetriebene Wiederverwendung eingegangen wird, sollen noch ein paar Werkzeuge, die es erleichtern Code wiederzuverwenden, jedoch eine andere Philosophie benutzen. Die Informationen wurden aus \autocite{OS5/2011} und \autocite{Hum08} entnommen.
+In diesem Kapitel werden kurz Werkzeuge vorgestellt, die es erleichtern Code wiederzuverwenden. Sie benutzen keine testgetriebene Wiederverendung, allerdings können sie als Inspiration betrachtet werden um solche Werkzeuge zu entwickeln. Die Informationen wurden aus \autocite{OS5/2011} und \autocite{Hum08} entnommen.
 
 \section{CodeBroker}
-CodeBroker war ein Werkzeug, das in Emacs integriert werden konnte. Es arbeitete im Hintergrund und schlug dem Benutzer Komponenten vor, die er womöglich gebrauchen könnte. Das Werkzeug hatte allerdings zwei große Nachteile. Zum einen suchte es die Empfehlungen mit Hilfe von Kommentaren. Somit musste der Benutzer ungeschriebenen Code kommentieren, was den Arbeitsaufwand erhöht. Zum anderen gab es zu wenige Komponenten, die überhaupt vorgeschlagen werden konnten.
+CodeBroker ist ein Werkzeug, das in Emacs integriert werden kann. Es arbeitet im Hintergrund und schlägt dem Benutzer Komponenten vor, die er womöglich gebrauchen kann. Das Werkzeug hat allerdings zwei große Nachteile. Zum einen sucht es die Empfehlungen mit Hilfe von Kommentaren. Somit muss der Benutzer ungeschriebenen Code kommentieren, was den Arbeitsaufwand erhöht. Zum anderen gibt es zu wenige Komponenten, die überhaupt vorgeschlagen werden können.
 
 \section{Rascal}
-Rascal war ein Eclipse Plugin, welches dessen Auto-Complete Funktion erweiterte. Demnach kann es dem Benutzer empfehlen, wann er welche Methoden wie benutzen soll. Um die Vorschläge zu erstellen wurde Collaborative Filtering benutzt, diese Technik wird häufig in Onlineshops benutzt um deren Kunden Artikel vorzuschlagen.
+Rascal ist ein Eclipse Plugin, welches dessen Auto-Complete Funktion erweitert. Demnach kann es dem Benutzer empfehlen, wann er welche Methoden wie benutzen soll. Um die Vorschläge zu erstellen wird Collaborative Filtering benutzt, diese Technik wird häufig in Onlineshops benutzt um deren Kunden Artikel vorzuschlagen.
 
 \section{Prospector, ParseWeb, Strathcona}
 Diese Werkzeuge arbeiten auf vorhandenem Code und extrahieren aus diesem genau die Fragmente, in denen die gewünschte Bibliothek zuvor schon einmal in einem ähnlichen Kontext angesprochen wurde.
