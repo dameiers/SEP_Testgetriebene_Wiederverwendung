@@ -2,25 +2,25 @@
 
 \section{Idee der testgetriebenen Wiederverwendung}
 
-Im einfachsten Fall wird eine Suchmaschine aus Abbildung~\ref(fig:suchmaschinen) benutzt um Code wiederzuverwenden. In den meisten Fällen kann der Benutzer Suchbegriffe angeben und dann werden ihm die entsprechenden Ergebnisse angezeigt. Weiterhin bieten sie meistens Möglichkeiten, um die Resultate zu filtern, so dass nur Code bestimmter Programmiersprachen oder Lizenzen angezeigt wird. Allerdings hat diese Art und Weise zu arbeiten gewisse Nachteile, die im folgenden erklärt werden. 
+Im einfachsten Fall wird eine, der oben vorgestellten Suchmaschine benutzt, um Code wiederzuverwenden. In den meisten Fällen kann der Benutzer Suchbegriffe angeben, woraufhin ihm die entsprechenden Ergebnisse angezeigt werden. Weiterhin bieten sie meistens Möglichkeiten, um die Resultate zu filtern, so dass nur Code bestimmter Programmiersprachen oder Lizenzen angezeigt wird. Allerdings hat diese Art und Weise zu arbeiten gewisse Nachteile, die im folgenden erklärt werden. 
 
 Ein Nachteil der Suchmaschinen im Web-Browser ist, dass der Benutzer ständig zwischen dem Web-Browser und seiner Entwicklungsumgebung hin und her wechseln muss. Dieser Wechsel kostet unnötig Zeit und Nerven, wobei er einfach vermieden werden kann, indem die Suche in die Entwicklungsumgebung integriert wird. Für die Integration spricht ebenfalls, dass die Suche automatisch ausgelöst werden könnte ohne den Benutzer zu stören, wobei dieser auf die Suchergebnisse zugreifen kann, falls er sie benötigt. Dadurch würde die Wiederverwendung bereits attraktiver werden, da sie nicht mehr so umständlich ist.
 
 Ein weiterer Nachteil ist, dass der Benutzer die gefundenen Komponenten manuell überprüfen und testen muss, ehe er sie in einem Projekt verwenden kann. Dies wird dadurch erschwert dass die Suchmaschinen viele Komponenten anzeigen, die den Anforderungen nicht entsprechen, sogenannte "False Positives". \autocite[vgl.][10]{OS5/2011} Diese False Positives kommen unter anderem zustande, da die Menge an Open-Source Code beachtlich ist und dieser Code durchaus wiederverwendet werden kann. Allerdings arbeiten die Suchmaschinen nicht gut genug um sämtliche falschen Ergebnisse herauszufiltern. Dies macht das manuelle heraus filtern sehr zeitaufwendig, so dass der Zeitgewinn bei der Wiederverwendung gering oder sogar negativ ausfällt und es schneller wäre die entsprechende Komponente neu zu schreiben. Diese Ungewissheit ob Zeit gewonnen wird oder nicht, ist ein Argument gegen die Wiederverwendung, da durchaus viel Zeit verschwendet werden kann.
 
-Der Ansatz der testgetriebenen Wiederverwendung ist es, das Herausfiltern und Testen zu automatisieren. Es wird versucht die Anzahl der False Positives zu verringern, indem die gefundenen Komponenten mit Hilfe von Unit-Testfällen geprüft und getestet werden. Dem Benutzer  werden nur die vielversprechenden Komponenten angezeigt, also jene die den Test überstanden haben. Somit wird dem Benutzer Arbeit abgenommen und das Wiederverwenden kann an Attraktivität gewinnen. Dies bedeutet allerdings dass der Benutzer Testfälle für Code schreiben muss der noch nicht geschrieben ist. Dies ist jedoch nicht so abwegig, wie es auf den ersten Blick erscheinen mag und es wird besonders Anhängern von agilen Methoden bekannt vorkommen, da dies hier häufig Praxis findet. Für das sogenannte "Test First" gibt es einige Gründe \autocite[vgl.][]{xpTestFirst}, der Hauptgrund in diesem Fall ist dass der Benutzer feststellt, welche Funktionalität seine Komponente benötigt und dass sich das Design des Projektes verbessert.
+Der Ansatz der testgetriebenen Wiederverwendung ist es, das Herausfiltern und Testen zu automatisieren. Es wird versucht die Anzahl der False Positives zu verringern, indem die gefundenen Komponenten mit Hilfe von Unit-Testfällen geprüft und getestet werden. Dem Benutzer  werden nur die vielversprechenden Komponenten angezeigt, also jene die den Test überstanden haben. Somit wird dem Benutzer Arbeit abgenommen und das Wiederverwenden kann an Attraktivität gewinnen. Dies bedeutet allerdings dass der Benutzer Testfälle für Code schreiben muss der noch nicht geschrieben ist. Dieser Umstand ist jedoch nicht so abwegig, wie es auf den ersten Blick erscheinen mag und wird besonders Anhängern von agilen Methoden bekannt vorkommen, da dies hier häufig Praxis findet. Für das sogenannte "Test First" gibt es einige Gründe \autocite[vgl.][]{xpTestFirst}, die Hauptgründe sind, dass der Benutzer feststellt, welche Funktionalität seine Komponenten benötigten und dass sich so das Design des Projektes verbessern kann.
 
-Der geschriebene Test beschreibt den Aufbau der gesuchten Komponente, da er alle wichtigen Attribute und Methoden enthält. Demnach können Suchmaschinen alle wichtigen Informationen aus dem Test ziehen und daraus eine Sucheingabe generieren. Somit kann nach Komponenten, mit einem ähnlichen Aufbau gesucht werden, die dann den eigentlichen Test durchlaufen müssen. Der Benutzer erhält als Suchergebnis nur die Komponenten, die den Test erfolgreich bestanden haben, weil diese sämtliche Funktionalität besitzen, die benötigt wird.
+Der geschriebene Test beschreibt den Aufbau der gesuchten Komponente, da er alle wichtigen Attribute und Methoden enthält. Demnach können Suchmaschinen alle wichtigen Informationen aus dem Test ziehen und daraus eine Sucheingabe generieren. Somit kann nach Komponenten, mit einem ähnlichen Aufbau gesucht werden, die dann den eigentlichen Test durchlaufen müssen. Der Benutzer erhält als Suchergebnis nur die Komponenten, die den Test erfolgreich bestanden haben, weil diese sämtliche Funktionalitäten besitzen, die benötigt werden.
 
 \section{Vergleich und Stand von Tools}
-Die in \autocite[11]{OS5/2011} erwähnten Werkzeuge, die eine testgetriebene Wiederverwendung ermöglichen, sind:
+In \autocite[11]{OS5/2011} wurden Werkzeuge vorgestellt, die eine testgetriebene Wiederverwendung ermöglichen:
 \begin{itemize}
 	\item Code Genie
 	\item S6
 	\item Code Conjurer
 \end{itemize}
 
-Diese 3 Werkzeuge werden im Folgenden, vorgestellt wobei auf Code Genie und S6 nur kurz eingegangen wird. Code Conjurer wird ausführlicher betrachtet, weil es unserer Meinung das am ausgereiftesten Werkzeug ist, das testgetriebene Wiederverwendung erlaubt.
+Die eigene Erfahrungen, mit diesen drei 3 Werkzeugen, werden im Folgenden, vorgestellt wobei auf Code Genie und S6 nur kurz eingegangen wird. Code Conjurer wird ausführlicher betrachtet, weil es unserer Meinung das am ausgereiftesten Werkzeug ist, das testgetriebene Wiederverwendung erlaubt.
 
 \subsection{Code Genie}
 Die in \autocite[2]{Ota07} angegebene URL zu Code Genie existiert nicht mehr und es wurde auch sonst keine Möglichkeit gefunden um Code Genie herunterzuladen und zu testen. Laut \autocite[11]{OS5/2011} ist Code Genie ein Eclipse-Plug-In das die Suchmaschine Sourcerer benutzt. Allerdings verlangt es ein "'manuelles Integrieren und/oder Testen der Kandidaten in einer Kopie des eigenen Eclipse-Projektes."'
@@ -28,7 +28,7 @@ Die in \autocite[2]{Ota07} angegebene URL zu Code Genie existiert nicht mehr und
 \subsection{S6}
 S6 ist ein Web-Interface das über \autocite{s6search} erreichbar ist. Das Interface hat zwei große Nachteile:
 \begin{itemize}
-	\item Es können nur einfache Testfälle angegeben werden, die die Maske des Interfaces zulässt. Kompliziertere Unit-Tests sind somit nicht realisierbar, da das Hochladen von Dateien nicht möglich ist. Siehe in der Hilfe von: \autocite{s6search}
+	\item Es können nur einfache Testfälle angegeben werden, die die Maske des Interfaces zulässt. Kompliziertere Unit-Tests sind somit nicht realisierbar, da das Hochladen von Dateien nicht möglich ist. Dazu mehr in der Hilfe von: \autocite{s6search}
 	\item Weiterhin fehlt eine Anbindung an eine Entwicklungsumgebung, wie etwa Eclipse, so dass das Arbeiten mit S6 recht umständlich ist. \autocite[10]{s6search}
 \end{itemize}
 
@@ -52,7 +52,7 @@ Es folgt ein allgemeiner Ablauf, wie Code Conjurer benutzt werden kann. Wie die 
 Die wichtigsten Fenster von Code Conjurer 1 sind, das Status Feld und das Detailfenster. Im Statusfeld, sieht der Benutzer eine Übersicht über die gefundenen Ergebnisse, dieses befindet sich unten links. Im Detailfenster kann sich der Benutzer die Details zu der Suche explizit anzeigen lassen. Dieses ist in zwei aufgeteilt, wobei in der Mitte unten die Suchergebnisse zu sehen sind, und rechts davon wird der Quellcode der einzelnen Suchergebnisse angezeigt. 
 
 \begin{itemize}
-	\item In einem ersten Schritt schreibt der Benutzer einen JUnit-Test für die ungeschriebene Komponente, die er benötigt. Dieser Vorgang geschieht ganz normal, wie der Benutzer dies gewöhnt ist, allerdings muss er darauf achten dass JUnit3 verwendet wird, da Code Conjurer nur dieses ünterstützt.
+	\item In einem ersten Schritt schreibt der Benutzer einen JUnit-Test für die ungeschriebene Komponente, die er benötigt. Dieser Vorgang geschieht wie gewohnt, allerdings muss darauf geachten dass JUnit3 verwendet wird, da Code Conjurer nur dieses ünterstützt.
 	\item Code Conjurer wird automatisch aktiv wenn der Benutzer den Test ausführt.
 	\item Das Werkzeug sendet eine testgetriebene Suchanfrage an die Suchmaschine Merobase, welche die eigentlich Arbeit übernimmt.
 	\begin{itemize}
@@ -62,7 +62,7 @@ Die wichtigsten Fenster von Code Conjurer 1 sind, das Status Feld und das Detail
 	\end{itemize}
 	\item Code Conjurer zeigt die Anzahl der erfolgreich getesteten Kandidaten in dem Status Feld an.
 	\item In dem Fenster mit den Details zur Suche kann der Benutzer sich den Aufbau der gefundenen Komponenten anschauen, sowie den Quellcode überprüfen.
-	\item Hat sich der Benutzer für eine Komponenten entschieden, kann er diese,per Drag-And-Drop zu seinem Projekt hinzufügen, wobei Code Conjurer die Abhängigkeiten automatisch auflöst.
+	\item Hat sich der Benutzer für eine Komponenten entschieden, kann er diese, per Drag-And-Drop zu seinem Projekt hinzufügen, wobei Code Conjurer die Abhängigkeiten automatisch auflöst.
 \end{itemize}
 
 \subsubsection{Weitere Funktionen von Code Conjurer 1}
@@ -130,7 +130,7 @@ Um Code Conjurer 2 zu testen wurden verschiedene Beispiele aus Abbildung~\ref{fi
 
 \subsubsection{Shopping Card}
 
-Bei diesem Beispiel soll eine Komponente für einen Einkaufswagen gefunden werden, dazu wurde eine Java Klasse angelegt, die den gleichen Aufbau hat, wie dies oben in der Abbildung gezeigt wird. In einem ersten Schritt soll Code Conjurer die normale Codesuche verwenden, diese findet allerdings keine Ergebnisse. Gibt man die Klasse bei Merobase direkt ein, so erhält man zwar Suchergebnisse, allerdings kann Merobase den Quellcode dieser Komponenten nicht mehr finden.
+Bei diesem Beispiel soll eine Komponente für einen Einkaufswagen gefunden werden, dazu wurde eine Java Klasse angelegt, die den gleichen Aufbau hat, wie dies in der Abbildung~\ref{fig:normalVSautomated} gezeigt wird. In einem ersten Schritt soll Code Conjurer die normale Codesuche verwenden, diese findet allerdings keine Ergebnisse. Gibt man die Klasse bei Merobase direkt ein, so erhält man zwar Suchergebnisse, allerdings kann Merobase den Quellcode dieser Komponenten nicht mehr finden.
 Ein weiteres Testen mit diesem Beispiel ist demnach sinnlos.
 
 \subsubsection{Complex Number}
@@ -139,10 +139,10 @@ Bei der Suche nach Komponenten für komplexe Zahlen wurden zumindest Suchergebnis
 
 \subsubsection{Matrix}
 
-In diesem letztes Beispiel wurde nach einer Matrix Komponente gesucht. Bei der normalen Codesuche wurden 30 Ergebnisse gefunden, demnach konnte mit der testgetriebenen Suche weitergemacht werden. Bei dieser Suche, konnten allerdings keine passenden Treffer gefunden werden. Gibt man den Testfall direkt in der Weboberfläche von Merobase ein, so schlagen hier auch alle Testfälle fehl, wobei bei jedem Testfall die Fehlermeldung "'TestResult: error: compilation failed"' ausgegeben wird. Um sicher zu gehen, dass diese Fehlermeldung nicht auf den JUnit-Testfall zurückzuführen ist, wurde die Matrix Klasse von uns implementiert und der Testfall konnte lokal erfolgreich durchgeführt werden. Demnach ist unserer Testfall richtig und die eigentliche Suche bei Merobase schlägt fehl.
+In diesem Beispiel wurde nach einer Matrix Komponente gesucht. Bei der normalen Codesuche wurden 30 Ergebnisse gefunden, demnach konnte mit der testgetriebenen Suche weitergemacht werden. Bei dieser Suche, konnten allerdings keine passenden Treffer gefunden werden. Gibt man den Testfall direkt in der Weboberfläche von Merobase ein, so schlagen hier auch alle Testfälle fehl, wobei bei jedem Testfall die Fehlermeldung "'TestResult: error: compilation failed"' ausgegeben wird. Um sicher zu gehen, dass diese Fehlermeldung nicht auf den JUnit-Testfall zurückzuführen ist, wurde die Matrix Klasse von uns implementiert und der Testfall konnte lokal erfolgreich durchgeführt werden. Demnach ist unserer Testfall richtig und die eigentliche Suche bei Merobase schlägt fehl.
 
 \subsubsection{getter/setter}
-Im letzten Beispiel, bestand die Testklasse nur aus einem setter und einem getter für eine String Variable. Es wurden 30 Ergebnisse gefunden, die getestet wurden. Dabei waren 8 erfolgreich, nach dem automatisch ein Adapter erstellt wurde, da die Variabelnamen und Methodennamen nicht übereinstimmten. Der Rest schlug fehl. Die Ergebnisse wurden stichprobenartig kontrolliert, dabei fiel auf, dass einige Komponenten den Test hätten bestehen müssen. Weiterhin fiel auf, dass die Komponenten die bestanden, keine Abhängigkeiten haben, jene die hätten bestehen müssen jedoch welche haben.
+Im letzten Beispiel, bestand die Testklasse nur aus einem setter und einem getter für eine String Variable. Es wurden 30 Ergebnisse gefunden, die getestet wurden. Dabei waren 8 erfolgreich, nachdem automatisch ein Adapter erstellt wurde, da die Variabelnamen und Methodennamen nicht übereinstimmten. Der Rest schlug fehl. Die Ergebnisse wurden stichprobenartig kontrolliert, dabei fiel auf, dass einige Komponenten den Test hätten bestehen müssen. Weiterhin fiel auf, dass die Komponenten die bestanden, keine Abhängigkeiten haben, jene die hätten bestehen müssen jedoch welche haben.
 Bei der direkten Suche mit Merobase wurde unsere Vermutung bestätigt. Jene Komponenten, die hätten bestehen müssen, zeigten die Fehlermeldung "'TestResult: error: compilation failed"'. Somit gehen wir davon aus, dass Merobase die Abhängigkeiten nicht richtig oder gar nicht auflöst.
 
 
@@ -160,14 +160,14 @@ Um Code Conjurer 2 zu bewerten, werden zu erst die einzelnen Features betrachtet
 	\item [Anzeigen der Suchergebnisse mit Quellcode]
 		{Funktioniert wie beschrieben.}
 	\item [Hinzufügen einer Komponente per Drag-And-Drop zum eigenen Projekt]
-		{Das Hinzufügen einer einzelnen Komponente zu einem eigenen Projekt funktioniert.}
+		{Funktioniert wie beschrieben.}
 	\item [Automatisches Auflösen der Abhängigkeiten von einem hinzugefügten Projekt]
 		{Dieses Feature funktioniert nicht. Dies scheint jedoch ein Problem von Merobase selbst zu sein, wie im Beispiel oben beschrieben.}
 	\item [Automated Adaptation]
 		{Funktioniert wie beschrieben.}
 	\item [Proactive Reuse Recommendations]
-		{Dieses Feature ist vorhanden. Allerdings wird die automatische Suche sehr häufig angestoßen, so dass es zuviele Ressourcen benötigt und Eclipse,für einige Minuten, blockieren läßt. Dies passiert besonders häufig, wenn eine eigene Komponente mit einer, von Code Conjurer gefundenen, Komponente überschrieben wird. Kurz: durch das Blockieren kostet das Feature mehr Zeit und Nerven, als das kurze Drücken auf den Suchknopf und ist somit kontraproduktiv.}
+		{Dieses Feature ist vorhanden. Allerdings wird die automatische Suche sehr häufig angestoßen, so dass es zuviele Ressourcen benötigt und Eclipse,für einige Minuten, blockieren läßt. Dies passiert besonders häufig, wenn eine eigene Komponente mit einer, von Code Conjurer gefundenen, Komponente überschrieben wird. Kurz: durch das Blockieren kostet das Feature mehr Zeit und Nerven, als das gelegentliche Drücken auf den Suchknopf und ist somit kontraproduktiv.}
 \end{description}
 
-Unterm Strich kann man festhalten, dass die codebasierte Suche funktioniert und der gefundene Code, in einigen Fällen, zu gebrauchen ist. Das Werkzeug ist allerdings hierfür nicht ausgelegt, so dass es umständlich ist, das Werkzeug für diese Aufgabe zu verwenden. Mit der eigentlichen Hauptfunktionalität, der testgetriebenen Suche, konnten keine brauchbaren Ergebnisse erziehlt werden, so dass kein gefundener Code wiederverwendet werden konnte. 
+Unterm Strich kann man festhalten, dass die codebasierte Suche funktioniert und der gefundene Code, in einigen Fällen, zu gebrauchen ist. Das Werkzeug ist allerdings hierfür nicht ausgelegt, so dass es umständlich ist, es für diese Aufgabe zu verwenden. Mit der eigentlichen Hauptfunktionalität, der testgetriebenen Suche, konnten keine brauchbaren Ergebnisse erziehlt werden, so dass kein gefundener Code wiederverwendet werden konnte. 
 

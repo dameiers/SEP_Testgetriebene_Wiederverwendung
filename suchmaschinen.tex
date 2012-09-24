@@ -1,8 +1,8 @@
 \chapter{Software suchen}
+%meinst du "zu handhabende" ja meinte ich :-)
+Die für Menschen nicht mehr zu handhabende Größe von Softwarerepositories führt zu der Notwendigkeit das die Suche nach möglichen Kandidaten maschinell erfolgen muss.
 
-Die für Menschen nicht mehr zu handelnde Größe von Softwarerepositories führt zu der Notwendigkeit das die Suche nach möglichen Kandidaten maschinell erfolgen muss.
-
-Dies ist jedoch nicht als Nachteil zu sehen, da durch die maschinelle Unterstützung es für den Entwickler wesentlich leichter wird nach Komponenten beliebiger Funktionalität zu suchen. 
+Dies ist jedoch nicht als Nachteil zu sehen, da es durch die maschinelle Unterstützung, für den Entwickler, wesentlich leichter wird nach Komponenten beliebiger Funktionalität zu suchen. 
 
 Daher verwundert es nicht, dass die Idee einer maschinellen Suche nach Software nicht neu ist, sondern bereits seit über 25 Jahren exisitert. \autocite[vgl.][]{OS5/2011} Doch lange Zeit wurden keine nennenswerten Fortschritte in der Entwicklung von Suchmaschinen gemacht, da aufgrund der geringen verfügbaren Menge an Software die bis dato entwicklten Systeme vollkommen ausreichend waren. Erst mit der Open Source Bewegung wurde deutlich, dass weiterer Forschungsbedarf besteht. Die immer größere Menge an Software zeigte, dass bisherige Suchmaschinen zu schlechte Ergebnisse lieferten und für die Suche viel zu lange brauchten. \autocite[vgl.][]{OS5/2011}. Auch heute noch besteht Forschungsbedarf um die Suchergebnisse qualitativ besser zu machen. 
 
@@ -55,11 +55,12 @@ Strukturbasierte Methoden unterscheiden sich wesentlich von allen bisher vorgste
 
 Die zugrundeliegende Idee \enquote{[...]is the assumption that whenever two comonents have similiar functional properties, they also have similiar structures[...]}.\autocite{Mil98} [page 52]
 
-Dass eine solches Vorgehen notwendig sein kann wird in \autocite{Mil98} anhand von zwei Beispielen verdeutlicht. Man stelle sich 2 verschiedene Implementierungen eines Sortieralgorithmus vor. Eine Implementierung benutzt QuickSort, die andere SelectionSort als zugrundeliegenden Sortieralgorithmus. Auch wenn beide Programme die gleiche Funktionalität bereitstellen so ist deren Struktur doch deutlich unterschiedlich, da Quicksort ein rekursiver Algorithmus ist und grundlegend anders aufgebaut ist. 
+Dass ein solches Vorgehen notwendig sein kann, wird in \autocite{Mil98} anhand von zwei Beispielen verdeutlicht. Man stelle sich 2 verschiedene Implementierungen eines Sortieralgorithmus vor. Eine Implementierung benutzt QuickSort, die andere SelectionSort als zugrundeliegenden Sortieralgorithmus. Auch wenn beide Programme die gleiche Funktionalität bereitstellen so ist deren Struktur doch deutlich unterschiedlich, da Quicksort ein rekursiver Algorithmus ist und grundlegend anders aufgebaut ist. 
 
 Auch umgekehrt lässt sich ein Beispiel konstruieren. Man stelle sich ein Programm S sowie ein Programm M vor. S addiert die Elemente einer Liste, M multipliziert diese. Beide Programme haben eine unterschiedliche Funtkionalität, aufgrund ihrer ähnlichen Funktionsweise jedoch auch eine ähnliche Struktur. 
 Bei den bisher vorgestellten Techniken würde nach einer Suche nach S, P nicht als Kandidat geliefert werden, aufgrund ihrer ungleichen Funktionalität. Jedoch kann P mit wenigen Änderungen auf die gewünschte Funtkionalität gebracht werden und ist deshalb ein interessanter Kandidat.
 
+%2 mal falls im Satz
 Die strukturbasierte Suche findet jedoch kaum Anwendung in der Praxis. Falls doch werden die besten Ergebnisse erzielt falls lediglich die Operationssignaturen verwendet werden. Die Verwendung der internen Code Struktur ist problematisch, da sich nur schwer genaue Suchanfragen formulieren lassen.  \autocite[vgl.][]{OS5/2011, Mil98}     
 
 
